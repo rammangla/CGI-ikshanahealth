@@ -1,0 +1,126 @@
+mat-dialog-content{
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+mat-form-field{
+    color: black;
+}
+input:disabled{
+    color: black;
+}
+.mat-success{
+    background-color: #198875;
+    color: #fff;
+}
+mat-label{
+    color: black;
+}
+::placeholder{
+    color: black;
+    opacity: 1;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black !important;
+}
+
+
+/* Global */
+/* @import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+.container{
+    width:30em;
+    height: fit-content;
+    background-color: white;
+    margin-top: 2em;
+    margin-bottom: 10em;
+    margin-left: 12em;
+    border-radius: 10px;
+    border-color: black;
+    box-shadow: 0px 0px 20px black;
+}
+input{
+    height:1em;
+}
+form{
+    padding:0px;
+    border-radius: 10px;
+    border-color: black;
+    display: block;
+    margin-bottom: 400px;
+}
+label{
+    padding-left: 1em;
+    padding-top: 1em;
+    display: block;
+}
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+  }
+mat-toolbar{
+    background-color: #36af9b;
+    height: 1.8em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+mat-toolbar span{
+    text-align: center;
+    color: white;
+    margin-left: 6em;
+}
+mat-raised-button{
+    background-color: #36af9b;
+}
+.mybutton{
+    background-color: #36af9b;
+    margin-left: 4em;
+    padding-left: 10em;
+    padding-right: 10em;
+    border-radius: 25px;
+}
+.example-spacer{
+    flex: 1 1 auto;
+}
+select {
+    display: inline;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+  }
+
+.credit-card {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+ 
+body,
+html {
+    height: 100%;
+    min-height: 100%;
+    background-color: #3c4043;
+}
+body {
+    font-family: 'Monsterrat';
+    margin: 0;
+    background-color: white;
+   
+}
+
+.dates{
+    display: inline;
+    height: fit-content;
+    margin-top: 1em;
+    margin-right: 1em;
+}
+
+.card-number{
+    margin-bottom: 1em;
+} */
+
+

@@ -1,0 +1,54 @@
+<h1 style="font-weight: bold; color: white; margin-top: 30px;" align="center">Our Caretakers</h1>
+<div class="table" style="background-color: #3C4043; margin: 0 auto; margin-top: 20px;">
+    <div class="rightcolumn" fxLayout="wrap row" fxLayout.xs="column" fxLayoutGap="5%" fxLayoutAlign="center">
+      
+      <div *ngFor="let caretaker of caretakersList" fxFlex="28%">
+        <!-- <div class="thumbnail" style="margin-top: 17px;"> -->
+          <div class="flip-card" style="        
+          top:0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <ng-container *ngIf="caretaker.gender  == 'female', then femaleimg; else maleimg">     
+                </ng-container>
+                <ng-template #maleimg>
+                  <img src="../../../assets/images/male1.png" style="width:130px;height:130px; ">
+                  <br>
+                  <br>
+                <p matLine style="color: black;"> <b>This is Mr. {{caretaker.name}}</b> </p>
+                </ng-template>
+                <ng-template #femaleimg>
+                  <img src="../../../assets/images/female1.png"style="width:130px;height:130px; ">
+                  <br>
+                  <br>
+                <p matLine style="color: black;"> <b> This is Ms. {{caretaker.name}}</b> </p>
+                </ng-template>
+                <!-- <br>
+                <p matLine style="color: black;"> <b>{{caretaker.name}}</b> </p> -->
+                <p matLine>I provide {{caretaker.specialization}} </p>
+                <p matLine>Fees : 1500 Rs/day </p>
+                <p matLine>Available Full-time</p>
+                  <br>
+              </div>
+              <div class="flip-card-back" style="padding-top: 60px;">
+                <p matLine><b>Gender </b> : {{caretaker.gender}} </p>
+                <p matLine><b>Email </b> : {{caretaker.emailId}} </p>
+                <p matLine><b>Location</b> : {{caretaker.address.town}} </p>
+              </div>
+            </div>
+          </div>
+          <br>
+          <button style="border-radius: 10px;
+              color: white;
+              background-color: #198875; padding: 8px;" mat-button-raised
+            [routerLink]="['/userCaretakerProfileView', caretaker.emailId]">View Profile</button>
+        <!-- </div> -->
+        <br>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>

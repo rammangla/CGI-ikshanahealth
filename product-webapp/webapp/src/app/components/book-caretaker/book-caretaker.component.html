@@ -1,0 +1,18 @@
+<div class="parent">
+    <h1 align="center" class="mb-4"><b>Hire Caretaker</b></h1>
+    <div class="container w-50">
+        <h3 align="center" class="mb-2"><b>Available slots for caretaker</b></h3>
+        <div class="row">
+            <div class="col-lg-4" *ngFor="let item of availableSlots">
+                <button class="mb-2" (click)="actionMethod($event); onAdd(item);" type="submit" mat-raised-button [style.width.px]=172
+                    color="success">{{item.date | date}}</button>
+            </div><div class="col-lg-4"></div>
+        </div>
+        <br>
+        <br>
+    </div>
+</div>
+<div align="center" class="container">
+    <button (click)="onSubmit(); onSubmita()" type="submit" mat-raised-button color="submit"
+        *ngIf="isSubmitted">Submit</button>
+</div>

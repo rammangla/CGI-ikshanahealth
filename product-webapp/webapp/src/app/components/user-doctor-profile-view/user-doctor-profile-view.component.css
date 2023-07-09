@@ -1,0 +1,183 @@
+/*.padding {
+    padding: 3rem !important
+}
+h6 {
+    font-size: 14px
+}
+
+.img-radius {
+    border-radius: 5px;
+    width:50%
+}
+body {
+    background-color: #f9f9fa
+}
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    border: none;
+    margin-bottom: 30px;
+    
+}
+
+.card-body1 {
+    padding: 1.25rem;
+    width: 250px;
+    height: 300px;    
+}
+
+.col-md-8   {
+    display: inline-block
+}
+.text-muted {
+    color: #282a2c !important
+}
+.card-title {
+    color:cornflowerblue;
+    font-size: 30px;
+
+}
+.card-category{
+    font-size: 20px;
+}
+
+.card-body2{
+    padding: 1.25rem;
+    width: 250px;
+    height: 300px;  
+    margin-left: 40%;
+     
+}
+ 
+.mat-success{
+    background-color: #1b5c51;
+    color: #fff;
+  }
+    */
+
+.padding {
+ padding: 3rem !important
+}
+
+
+h6 {
+    font-size: 14px
+}
+
+.img-radius {
+    border-radius: 5px;
+    width:50%;
+      
+}
+body {
+    background-color: #f9f9fa
+}
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    border: none;
+    margin-bottom: 30px;
+    
+}
+
+.card-body1 {
+    padding: 1.25rem;
+    width: 250px;
+    height: 350px;  
+    /* background: linear-gradient(#198875,white);   */
+}
+
+.col-md-8   {
+    display: inline-block
+}
+.text-muted {
+    color:rgb(99, 99, 99) !important
+}
+.card-title {
+    color:white;
+    font-size: 30px;
+    text-align: center;
+
+}
+.card-category{
+    font-size: 20px;
+}
+
+#doctor {
+    background-color:   #36af9b;
+    border-color: #36af9b;
+    border-radius: 10px;
+    margin-top: 150px;
+}
+
+.doctor-profile-card-full {
+    /* background: linear-gradient(#198875,white); */
+    background-color:   #36af9b;
+}
+.card-body{
+    /* background: linear-gradient(#198875,white); */
+    /*  Montserrat, "Helvetica Neue", sans-serif;  */
+    font-family:  Montserrat, "Helvetica Neue", sans-serif; ;
+    font-size: large;
+    line-height: 1.6;
+}
+.card-header-danger{
+    background-color:   #36af9b;
+    /* background: linear-gradient(#198875,white); */
+    /* font-family: Montserrat, "Helvetica Neue", sans-serif;  */
+    font-family:   Montserrat, "Helvetica Neue", sans-serif; ;
+    font-size: large;
+   
+
+}
+
+.mat-success{
+    background-color: #198875;
+    color: #fff;
+    margin-left: 60%;
+  }
+
+  img
+  {
+      margin-left: 60%;
+  }
+  
+  .introHighlight{
+      margin-top: 2px;
+     margin-left: 6%;
+  }
+  mat-icon{
+      color: white;
+  }
+  h3{
+    margin: 1px;
+    padding: 1px;
+    padding-top: 1px;
+  }
+  .vote{
+      color: white;
+  }
+  .facPhoto{
+  width: 38%;
+  }
+  .row {
+    display: flex;
+  }
+  
+  .col {
+    flex: 33.33%;
+    padding: 0;
+  }
+  .bookAppointment{
+      margin-left: 150px;
+  }
+  .clinicFac{
+      background-color: #198875;
+      color: white;
+      margin-bottom: 30px;
+      border-radius: 10px;
+     height: 50px;
+
+  }

@@ -1,0 +1,194 @@
+<!-- carousel -->
+<mat-carousel timings="250ms ease-in" [autoplay]="true" interval:string="5000" color="primary" maxWidth="auto" proportion:string="25"
+	slides:string="2" [loop]="true" [hideArrows]="false" [hideIndicators]="false" [useKeyboard]="true" 
+	orientation="ltr">
+
+	<!-- <mat-carousel-slide #matCarouselSlide *ngFor="let slide of slides; let i = index" [image]="slide.image"
+		overlayColor="#00000040" [hideOverlay]="false">
+            <h2 style="margin-top: 300px;">Hello</h2>
+    </mat-carousel-slide> -->
+    <mat-carousel-slide #matCarouselSlide image="../../../assets/images/homepage-carousel-1.jpg"
+		overlayColor="#00000040" [hideOverlay]="false">
+            <h2 style="margin-top: 240px; color:white">Connecting Patients with Doctors.</h2>
+            <div class="register-buttons">
+                <div class="item">
+                <a class="doctor" routerLink="/about"><img src="../../../assets/images/doctor-register-button.png" height="100%" width="100%"/></a>
+            </div>
+            <div class="item">
+                <a class="caretaker" routerLink="/about"><img src="../../../assets/images/caretaker-register-button.png" height="100%" width="100%"/></a> 
+            </div>
+            </div>
+    </mat-carousel-slide>
+
+    <mat-carousel-slide #matCarouselSlide image="../../../assets/images/homepage-carousel-2.jpg"
+		overlayColor="#00000040" [hideOverlay]="false">
+            <h2 style="margin-top: 240px; color:white">Say no to long waiting hours for doctor's bookAppointment</h2>
+            <div class="register-buttons">
+                <div class="item">
+                <a class="doctor" routerLink="/about"><img src="../../../assets/images/doctor-register-button.png" height="100%" width="100%"/></a>
+            </div>
+            <div class="item">
+                <a class="caretaker" routerLink="/about"><img src="../../../assets/images/caretaker-register-button.png" height="100%" width="100%"/></a> 
+            </div>
+            </div>
+    </mat-carousel-slide>
+</mat-carousel>
+
+<!-- flip cards -->
+<mat-grid-list cols="3" rowHeight="500px">
+    <mat-grid-tile>
+        <div class='card-container'>
+            <div class='flippable-card' [ngClass]="{'flipped':flipped1}" (click)='flipped1 = !flipped1'>
+                <mat-card class=''>
+                    <img mat-card-image src="../../../assets/images/docto-homepage-1.jpg"  height="100%" width="100%"/>
+                </mat-card>
+
+                <mat-card class="text">
+                    <mat-card-title><h2>We Care, We Provide</h2></mat-card-title>
+                </mat-card>
+        
+                <mat-card class='back'>
+                    <mat-card-title><h3>We Care. We Provide.</h3></mat-card-title>
+                    <mat-card-content>
+                        <p>Goodbye doubts,</p>
+                        <p>Say Hello to your nearest doctor.</p>
+                        <p>24/7 Video consultation.</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>  
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div class='card-container'>
+            <div class='flippable-card' [ngClass]="{'flipped':flipped2}" (click)='flipped2 = !flipped2'>
+                <mat-card class=''>
+                    <img mat-card-image src="../../../assets/images/homepage-4.jpg"  height="100%" width="100%"/>
+                </mat-card>
+                
+                <mat-card class="text">
+                    <mat-card-title><h2>Our Offerings</h2></mat-card-title>
+                </mat-card>
+
+                <mat-card class='back'>
+                    <mat-card-title><h3>Our Offerings.</h3></mat-card-title>
+                    <p>Online bookAppointment booking.</p>
+                    <p>Online consultation.</p>
+                    <p>Affordable service.</p>
+                    <p>Caretaker hiring for flexible hours.</p>
+                </mat-card>
+            </div>  
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div class='card-container'>
+            <div class='flippable-card' [ngClass]="{'flipped':flipped3}" (click)='flipped3 = !flipped3'>
+                <mat-card class=''>
+                    <img mat-card-image src="../../../assets/images/homepage-5.jpg"  height="100%" width="100%"/>
+                </mat-card>
+
+                <mat-card class="text">
+                    <mat-card-title><h2>Benefits</h2></mat-card-title>
+                </mat-card>
+        
+                <mat-card class='back'>
+                    <mat-card-title><h3>Benefits you get</h3></mat-card-title>
+                    <p>Family plan.</p>
+                    <p>Location based search.</p>
+                    <p>Certified doctors/caretakers.</p>
+                    <p>Health reminder.</p>
+                </mat-card>
+            </div>  
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<!-- <mat-grid-list cols="2" rowHeight="480px">
+    <mat-grid-tile>
+        <div class="home-col">
+            <h1>We Care. We Provide.</h1>
+            <p>Goodbye doubts,</p>
+            <p>Say Hello to your nearest doctor.</p>
+            <p>24/7 Video consultation.</p>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <img src="../../../assets/images/docto-homepage-1.jpg" alt="" height="auto" width="60%">
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <img src="../../../assets/images/homepage-4.jpg" alt="" height="auto" width="60%">
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div class="home-col">
+            <h1>Our Offerings</h1>
+            <p><mat-icon class="check-icon">check  </mat-icon>Online doctor consultations with all specialists.</p>
+            <p><mat-icon class="check-icon">check  </mat-icon>Online bookAppointment booking at leading hospitals and clinics.</p>
+            <p><mat-icon class="check-icon">check  </mat-icon>Family plan</p>
+            <p><mat-icon class="check-icon">check  </mat-icon>Caretaker hiring (flexible working hours)</p>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list> -->
+
+<!-- <mat-grid-list cols="1" rowHeight="200px" class="home-location-color">
+    <mat-grid-tile>
+        <div class="home-col-location">
+            <p>Search Doctors and Caretakers based on location.</p>
+            <button mat-raised-button>Location</button>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list> -->
+
+<!-- for registration -->
+<h2>Join our family!</h2>
+<mat-grid-list cols="3" rowHeight="300px" class="registration">
+    <mat-grid-tile>
+        <div class="register-col">
+            <img src="../../../assets/images/registration-user.png" alt="" height="auto" width="30%">
+            <p><button mat-raised-button class="btn">Register</button></p>
+            <p>Register as a User/Patient and get all the benefits of 24x7 online consultations and Caretaker hiring.</p>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div class="register-col">
+            <img src="../../../assets/images/registration-doctor.jpeg" alt="" height="auto" width="30%">
+            <p><button mat-raised-button class="btn">Register</button></p>
+            <p>Register as a Doctor and reach every patients in need of instant consultations.</p>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div class="register-col">
+            <img src="../../../assets/images/registration-caretaker.png" alt="" height="auto" width="30%">
+            <p><button mat-raised-button class="btn">Register</button></p>
+            <p>Register as a Caretaker and help people in need in a flexible job hours.</p>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="1" class="home-story" rowHeight="130px">
+    <mat-grid-tile>
+        <div class="home-col-story">
+            <h2>What people say about us!</h2>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+<mat-grid-list cols="2" class="home-story" rowHeight="200px">
+    <mat-grid-tile>
+        <div class="home-col-story">
+            <p><i>"Great platform, helped me alot in getting instant consultation."</i></p>
+            <p style="text-align: end;">-Chris Hemsworth</p>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div class="home-col-story">
+            <p><i>"Affordable and trustworthy. Right platform for Indians."</i></p>
+            <p style="text-align: end;">-Jim Carrey</p>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2">
+        <div class="home-col-story">
+            <p><i>"My search for a good gynaec ended here"</i></p>
+            <p style="text-align: end;">-Kate Winslet</p>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<app-footer></app-footer>

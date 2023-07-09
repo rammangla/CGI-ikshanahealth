@@ -1,0 +1,40 @@
+mat-tab-group {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 1%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.container {
+    padding-top: 30px;
+}
+
+.singleNews {
+    margin-bottom: 20%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+img {
+    height: 200px;
+    margin-bottom: 0;
+}
+
+mat-card-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cardbody {
+    background: linear-gradient(rgba(153, 216, 202, 0.829),white);
+    height: 100px;
+    overflow-y: auto;
+    margin: 0 -15px;
+    padding: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    background-color: #36af9b;;
+    color: white;
+}
+

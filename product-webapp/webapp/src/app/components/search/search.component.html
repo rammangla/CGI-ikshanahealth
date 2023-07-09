@@ -1,0 +1,198 @@
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+<div class="parent">
+  <br>
+  <br>
+  <div align="center">
+  <h2 style="color: white;">
+    Our find-a-Doctor or Caretaker tool assists you in choosing from our diverse pool of Health Specialists and Caretaker Services. 
+  </h2>
+  <h2 style="color: white;"> 
+    Discover better health by using our doctor/caretaker ratings to make your choice.
+  </h2>
+  </div>
+  <br>
+  <div class="container">
+    <form [formGroup]="search" (ngSubmit)=onSubmit()>
+      <div class="row"
+        style="max-width: 1200px; margin: 0 auto; padding-left: 80px; border-radius: 20px; max-block-size: 75px;">
+        <div class="col-sm" style="margin-left: 20px; margin-top: 7px;">
+          <mat-form-field floatLabel="auto" appearance="outline" [style.width.px]=400 class="color">
+            <mat-label style="color: white; font-weight:bold; letter-spacing:1px;">Location</mat-label>
+            <input matInput formControlName="location" placeholder="Enter Location (City/Town)"
+              style="color: white; font-weight:500;">
+            <mat-icon matSuffix style="color: #3c4043;">location_on</mat-icon>
+          </mat-form-field>
+        </div>
+        <br />
+
+        <div class="col-sm" style="margin-top: 7px;">
+          <mat-form-field floatLabel="auto" appearance="outline" [style.width.px]=250 class="color"
+            style="color: white;">
+            <mat-label style="color: white; font-weight:bold; letter-spacing:1px;">Service Type</mat-label>
+            <mat-select formControlName="typeOfService" style="color: white;  ">
+              <mat-option value="none">Service Type</mat-option>
+              <mat-option value="doctor">Doctor</mat-option>
+              <mat-option value="caretaker">Caretaker</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <br />
+
+        <div class="col-sm" style="margin-top: 7px;" id="doctorDropdown" *ngIf=showdoctorDropdown>
+
+          <mat-form-field floatLabel="auto" appearance="outline" [style.width.px]=200 class="color"
+            style="color: white;">
+            <mat-label style="color: white; font-weight:bold; letter-spacing:1px;">Doctor Specialization</mat-label>
+            <mat-select formControlName="specialization" style="color: white;" class="mat-select-red">
+              <mat-option value="none">Doctor Specialization</mat-option>
+
+
+              <mat-option value="General">General Physician</mat-option>
+              <mat-option value="Paediatrics">Paediatrician</mat-option>
+              <mat-option value="Psychiatry">Psychiatrist</mat-option>
+              <mat-option value="Orthopedics">Orthopedist</mat-option>
+              <mat-option value="Dermatology">Dermatologist</mat-option>
+              <mat-option value="Treating Allergies">Allergist</mat-option>
+              <mat-option value="ENT">ENT</mat-option>
+              <mat-option value="Gynaecology">Gynaecologist</mat-option>
+              <mat-option value="Dentistry">Dentist</mat-option>
+              <mat-option value="Nutrition">Dietician</mat-option>
+
+              <mat-option value="Cardiology">Cardiologist</mat-option>
+              <mat-option value="Urology">Urologist</mat-option>
+              <mat-option value="Radiology">Radiologist</mat-option>
+              <mat-option value="Neurology">Neurologist</mat-option>
+              <mat-option value="Immunology">Immunologist</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </div>
+
+        <div class="col-sm" style="margin-top: 7px;" id="caretakerDropdown" *ngIf=showcaretakerDropdown>
+
+          <mat-form-field floatLabel="auto" appearance="outline" [style.width.px]=200 class="color">
+            <mat-label style="color: white; font-weight:bold; letter-spacing:1px;">Caretaker Service</mat-label>
+            <mat-select formControlName="specialization" style="color: white;" class="mat-select-red">
+              <mat-option value="none">Caretaker Specialization</mat-option>
+              <mat-option value="Baby-sitting">Baby-sitting</mat-option>
+              <mat-option value="Special-needs">Special-needs</mat-option>
+              <mat-option value="Elderly-care">Elderly-care</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </div>
+        <div class="col-sm" style="margin-top: 7px;">
+          <button type="submit" mat-mini-fab style="background-color: #3c4043;margin-top: 7px;">
+            <mat-icon>search</mat-icon>
+          </button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="table" *ngIf="location" style="background-color: white; margin: 0 auto; margin-top: 20px; max-width: 1100px;">
+  <div class="leftcolumn" *ngIf=showdoctor>
+    <h1 style=" font-weight: bold; color: black;">Doctors in {{location}}</h1>
+    <div *ngFor="let Doctor of doctorsList">
+      <!-- <div class="thumbnail"> -->
+        <div class="flip-card" style="
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        
+        margin: auto;">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+
+              <ng-container *ngIf="Doctor.gender  == 'female', then femaleimg; else maleimg">     
+              </ng-container>
+              <ng-template #maleimg>
+                <img src="../../../assets/images/male1.png" style="width:130px;height:130px;">
+              </ng-template>
+              <ng-template #femaleimg>
+                <img src="../../../assets/images/female1.png"style="width:130px;height:130px;">
+              </ng-template>
+              <br>
+              <br>
+              <p matLine style="color: black;"><b>This is Dr. {{Doctor.name}}</b> </p>
+              <p matLine>Specialized in {{Doctor.specialization}} </p>
+              <p matLine>Fees : 750 Rs. </p>
+              <p matLine>Available Full-time</p>
+              <br>
+            </div>
+            <div class="flip-card-back" style="padding-top: 60px;">
+            <p matLine><b>Email</b> : {{Doctor.emailId}} </p>
+            <p matLine><b>Clinic Name</b> : {{Doctor.address.clinicName}}</p>
+            <p matLine><b>Location</b> : {{Doctor.address.town}}</p>
+            </div>
+          </div>
+        </div>
+        <br>
+        <button style="border-radius: 10px;
+            color: white;
+            background-color: #3c4043;" mat-button-raised
+          [routerLink]="['/userDoctorProfileView', Doctor.emailId]">View Profile</button>
+      <!-- </div> -->
+        <br>
+        <br>
+        <br>
+    </div>
+  </div>
+  <div class="rightcolumn" *ngIf=showcaretaker>
+    <h1 style="font-weight: bold; color: black;">Caretakers in {{location}}</h1>
+    <div *ngFor="let caretaker of caretakersList">
+      <!-- <div class="thumbnail" style="margin-top: 17px;"> -->
+        <div class="flip-card" style="        
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        
+        margin: auto;">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <ng-container *ngIf="caretaker.gender  == 'female', then femaleimg; else maleimg">     
+              </ng-container>
+              <ng-template #maleimg>
+                <img src="../../../assets/images/male1.png" style="width:130px;height:130px; ">
+                <br>
+                <br>
+              <p matLine style="color: black;"> <b>This is Mr. {{caretaker.name}}</b> </p>
+              </ng-template>
+              <ng-template #femaleimg>
+                <img src="../../../assets/images/female1.png"style="width:130px;height:130px; ">
+                <br>
+                <br>
+              <p matLine style="color: black;"> <b> This is Ms. {{caretaker.name}}</b> </p>
+              </ng-template>
+              <!-- <br>
+              <p matLine style="color: black;"> <b>{{caretaker.name}}</b> </p> -->
+              <p matLine>I provide {{caretaker.specialization}} </p>
+              <p matLine>Fees : 1500 Rs/day </p>
+              <p matLine>Available Full-time</p>
+                <br>
+            </div>
+            <div class="flip-card-back" style="padding-top: 60px;">
+              <p matLine><b>Gender </b> : {{caretaker.gender}} </p>
+              <p matLine><b>Email </b> : {{caretaker.emailId}} </p>
+              <p matLine><b>Location</b> : {{caretaker.address.town}} </p>
+            </div>
+          </div>
+        </div>
+        <br>
+        <button style="border-radius: 10px;
+            color: white;
+            background-color: #3c4043; padding: 8px;" mat-button-raised
+          [routerLink]="['/userCaretakerProfileView', caretaker.emailId]">View Profile</button>
+      <!-- </div> -->
+      <br>
+      <br>
+      <br>
+    </div>
+  </div>
+</div>
+

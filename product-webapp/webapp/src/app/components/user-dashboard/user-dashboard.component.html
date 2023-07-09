@@ -1,0 +1,230 @@
+<div class=" wrapper container bg-dark-gray">
+    <div class="row">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4" align="center">
+                <h1>Hi, {{userReq.name}} !!</h1>
+            </div>
+            <div class="col-lg-4" align="right">
+                <button type="submit" mat-icon-button [routerLink]="['/user-profile']">
+                    <mat-icon class="white-icon">person</mat-icon>
+                </button>
+            </div>
+            <hr />
+        </div>
+        <mat-tab-group (selectedTabChange)="onChange($event)">
+            <mat-tab label="Doctor Appointment">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <h2 align="center">Upcoming Appointments</h2>
+                        <hr>
+                        <ng-container *ngIf="upcoming.length !=0, then slots; else err" text-align="center">
+                            Welcome!!
+                        </ng-container>
+                        <ng-template #slots>
+                            <mat-card class="example-card mb-5 mr-3" *ngFor="let item of upcoming">
+
+                                <mat-card-header>
+                                    <div class="container p-0">
+                                        <div class="row mb-0">
+                                            <div class="col-lg-6 p-0">
+                                                <mat-card-title class="mt-4">{{item.date}}</mat-card-title>
+                                                <mat-card-subtitle>
+                                                    Dr. {{item.doctorName}}
+                                                    <div class="star-rating-container star-rating-animation"
+                                                        fxLayout="row" fxLayoutAlign="start center">
+
+                                                        <div *ngFor="let star of stars" [ngClass]="[star.class]"
+                                                            (click)="selectStar(star.id)">
+                                                            <mat-icon>{{star.icon}}</mat-icon>
+                                                        </div>
+                                                    </div>
+                                                </mat-card-subtitle>
+                                            </div>
+                                            <div class="col-lg-6 p-2 pt-3">
+                                                <button class="float-right mr-3" mat-icon-button color="success" 
+                                                    aria-label="Example icon button with a menu icon"  (click)="startChat(userReq.phoneNumber, item.date, item.slot, userReq.name)">
+                                                    <mat-icon>message</mat-icon>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </mat-card-header>
+
+                                <hr />
+                                <mat-card-content class="text-white mb-0">
+                                    <div class="row">
+                                        <div class="col-xl-4">
+                                            {{item.address.clinicName}}
+                                        </div>
+                                        <div class="col-xl-4">
+                                            {{item.slot}}
+                                        </div>
+                                        <div class="col-xl-4">
+                                            {{item.address.plotNo}}, {{item.address.street}}, {{item.address.town}},
+                                            {{item.address.district}}, <br />{{item.address.state}},
+                                            {{item.address.pincode}}
+                                        </div>
+                                    </div>
+                                </mat-card-content>
+                                <!-- <mat-card-actions>
+                                    <button class="ml-4" type="submit" mat-raised-button color="success" [routerLink]="['/userDoctorProfileView', userReq.name]">Doctor's
+                                        Profile</button>
+                                </mat-card-actions> -->
+                            </mat-card>
+                        </ng-template>
+                        <ng-template #err>
+                            <mat-card>
+                                <h3>No Upcoming Appointments</h3>
+                            </mat-card>
+                        </ng-template>
+                    </div>
+                    <div class="col-lg-3">
+                        <h2 align="center">Previous Appointments</h2>
+                        <hr>
+                        <ng-container *ngIf="previous.length !=0, then app; else na" text-align="center">
+                            Welcome!!
+                        </ng-container>
+                        <ng-template #app>
+                            <mat-card class="example-card mb-5 ml-2" *ngFor="let item of previous">
+                                <mat-card-header>
+                                    <mat-card-title class="mt-4">{{item.date}}</mat-card-title>
+                                    <mat-card-subtitle>
+                                        Dr. {{item.doctorName}}
+                                        <div class="star-rating-container star-rating-animation" fxLayout="row"
+                                            fxLayoutAlign="start center">
+
+                                            <div *ngFor="let star of stars" [ngClass]="[star.class]"
+                                                (click)="selectStar(star.id)">
+                                                <mat-icon>{{star.icon}}</mat-icon>
+                                            </div>
+                                        </div>
+                                    </mat-card-subtitle>
+                                </mat-card-header>
+                                <mat-card-actions>
+                                    <button class="mt-3 ml-3" type="submit" mat-raised-button color="success">Submit
+                                        Rating</button>
+                                    <br>
+                                    <br>
+                                </mat-card-actions>
+                            </mat-card>
+                        </ng-template>
+                        <ng-template #na>
+                            <mat-card>
+                                <h3>No Previous Appointments</h3>
+                            </mat-card>
+                        </ng-template>
+
+                    </div>
+                </div>
+                <div class="container">
+                    <app-recommendation></app-recommendation>
+                </div>
+            </mat-tab>
+            <mat-tab label="Hired Caretaker">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <h2 align="center">Upcoming Caretakers</h2>
+                        <hr>
+                        <ng-container *ngIf="caretakerupcomingSlotMap.size !=0, then slots1; else err1" text-align="center">
+                            Welcome!!
+                        </ng-container>
+                        <ng-template #slots1>
+                            <mat-card class="example-card mb-5 mr-3" *ngFor="let item of caretakerupcomingSlotMap | keyvalue">
+
+                                <mat-card-header>
+                                    <div class="container p-0">
+                                        <div class="row mb-0">
+                                            <div class="col-lg-6 p-0">
+                                                <mat-card-title class="mt-4">{{item.key}}</mat-card-title>
+                                                <mat-card-subtitle>
+                                                    Dr. {{item.value.name}}
+                                                    <div class="star-rating-container star-rating-animation"
+                                                        fxLayout="row" fxLayoutAlign="start center">
+
+                                                        <div *ngFor="let star of stars" [ngClass]="[star.class]"
+                                                            (click)="selectStar(star.id)">
+                                                            <mat-icon>{{star.icon}}</mat-icon>
+                                                        </div>
+                                                    </div>
+                                                </mat-card-subtitle>
+                                            </div>
+                                            <div class="col-lg-6 p-2 pt-3">
+                                                <button class="float-right mr-3" mat-icon-button color="success"
+                                                    aria-label="Example icon button with a menu icon">
+                                                    <mat-icon>message</mat-icon>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </mat-card-header>
+
+                                <hr />
+                                <mat-card-content class="text-white mb-0">
+                                    <div class="row">
+                                        <div class="col-xl-4">
+                                            {{item.value.address.town}}
+                                        </div>
+                                        <div class="col-xl-8">
+                                            {{item.value.address.plotNo}}, {{item.value.address.street}}, {{item.value.address.town}},
+                                            {{item.value.address.district}}, <br />{{item.value.address.state}},
+                                            {{item.value.address.pincode}}
+                                        </div>
+                                    </div>
+                                </mat-card-content>
+                                <!-- <mat-card-actions>
+                                    <button class="ml-4" type="submit" mat-raised-button color="success" [routerLink]="['/userCaretakerProfileView', userReq.name]">Caretaker's
+                                        Profile</button>
+                                </mat-card-actions> -->
+                            </mat-card>
+                        </ng-template>
+                        <ng-template #err1>
+                            <mat-card>
+                                <h3>No Upcoming Caretakers</h3>
+                            </mat-card>
+                        </ng-template>
+                    </div>
+                    <div class="col-lg-3">
+                        <h2 align="center">Previous Caretakers</h2>
+                        <hr>
+                        <ng-container *ngIf="caretakerpreviousSlotMap.size !=0, then app1; else na1" text-align="center">
+                            Welcome!!
+                        </ng-container>
+                        <ng-template #app1>
+                            <mat-card class="example-card mb-5 ml-2" *ngFor="let item of caretakerpreviousSlotMap | keyvalue">
+                                <mat-card-header>
+                                    <mat-card-title class="mt-4">{{item.key}}</mat-card-title>
+                                    <mat-card-subtitle>
+                                        Dr. {{item.value.name}}
+                                        <div class="star-rating-container star-rating-animation" fxLayout="row"
+                                            fxLayoutAlign="start center">
+
+                                            <div *ngFor="let star of stars" [ngClass]="[star.class]"
+                                                (click)="selectStar(star.id)">
+                                                <mat-icon>{{star.icon}}</mat-icon>
+                                            </div>
+                                        </div>
+                                    </mat-card-subtitle>
+                                </mat-card-header>
+                                <mat-card-actions>
+                                    <button class="mt-3 ml-3" type="submit" mat-raised-button color="success">Submit
+                                        Rating</button>
+                                    <br>
+                                    <br>
+                                </mat-card-actions>
+                            </mat-card>
+                        </ng-template>
+                        <ng-template #na1>
+                            <mat-card>
+                                <h3>No Previous Caretakers</h3>
+                            </mat-card>
+                        </ng-template>
+
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
+
+<!-- [routerLink]="['/chat', userReq.name, item.appointmentId]" -->

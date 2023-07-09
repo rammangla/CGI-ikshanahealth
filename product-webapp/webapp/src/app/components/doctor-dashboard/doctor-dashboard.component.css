@@ -1,0 +1,67 @@
+.example-container {
+  position: absolute;
+  top: 65px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+mat-drawer{
+    width: 230px;
+    background : #198875;
+    border-right: 2px solid black;
+}
+mat-drawer img {
+    width: 40%;
+    margin-left:4em;
+    margin-top: 1em;
+    margin-bottom: 1.4em;
+}
+.profile{
+    margin-left: 3.5em;
+    background-color: #3c4043;
+    color:whitesmoke;
+}
+mat-drawer-content{
+    background-color: #3c4043;
+    color: whitesmoke;
+}
+.centric{
+    margin-left: 1em;
+    margin-top: 2em;
+}
+.table{
+    margin-top: 2.7em;
+    margin-left:5em;
+}
+.appoint{
+    margin-top:4em;
+    margin-left: 7.6em;
+}
+mat-card{
+    background: #d8e9dc;
+    width:fit-content;
+}
+/* .card-body1{
+      margin:10px;
+} */
+.side-bar .example-card {
+    background: #198875;
+}
+.mat-elevation-z4  {
+    background: #198875;
+}
+/* .table {
+    background: #198875;
+} */
+/* .card-body1 {
+    padding-right: 0rem;
+    margin-right: 0rem;
+    margin-left:10px;
+}  */
+thead{
+    background: #198875;
+
+}
+tbody{
+    background: white;
+}

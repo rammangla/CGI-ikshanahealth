@@ -1,0 +1,326 @@
+<div class="main-content padding">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4 ">
+          <div class="card caretaker-profile-card-full">
+            <div class="card-body1">
+              <ng-container *ngIf="caretaker.gender  == 'female', then femaleimg; else maleimg">
+              </ng-container>
+              <ng-template #maleimg>
+                <img src="../../../assets/images/male1.png" class="img-radius" class="image">
+              </ng-template>
+              <ng-template #femaleimg>
+                <img src="../../../assets/images/female1.png" class="img-radius" class="image">
+              </ng-template>
+              
+                
+                  <h4> <b>{{caretaker.name}}</b> </h4>
+                  <h4>{{caretaker.specialization}}</h4>
+                  <h4>{{caretaker.fees}} <span>&#8377;</span> Per Week</h4>
+                  <h4>{{caretaker.totalExperience}} Years Experience</h4>
+                  <mat-icon> call</mat-icon>&nbsp;&nbsp;<span>{{caretaker.phoneNumber}}</span><br>
+                  <mat-icon>verified_user</mat-icon>&nbsp;&nbsp;<span>Profile Verified</span><br>
+                  <mat-icon>thumb_up</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vote"><b>95%</b> (55 votes)</span>      
+            </div>
+          </div>
+          </div>
+        <div class="col-md-8 ">
+          <div class="card">
+            <div class="card-header card-header-danger" style=" color: white;">
+              <h4 class="card-title">{{caretaker.name}} </h4>
+            </div>
+            <div class="card-body">
+              <form>
+              <!--  <div class="row">
+                  <div class="col-md-6">
+                    <p class="m-b-10 f-w-600"> Name</p>
+                    <h6 class="text-muted f-w-400">{{caretaker.name}}</h6>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Gender</p>
+                    <h6 class="text-muted f-w-400">{{caretaker.gender}}</h6>
+                  </div>
+                  </div>
+                  <div class="row">
+                  <div class="col-md-6">
+                    <p class="m-b-10 f-w-600">Email Id</p>
+                    <h6 class="text-muted f-w-400">{{caretaker.emailId}}</h6>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Phone Number</p>
+                    <h6 class="text-muted f-w-400">{{caretaker.phoneNumber}}</h6>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                      <p class="m-b-10 f-w-600">Total Experience</p>
+                      <h6 class="text-muted f-w-400">{{caretaker.totalExperience}}</h6>
+                    </div>
+                    <div class="col-md-4">
+                      <p class="m-b-10 f-w-600">Fees</p>
+                      <h6 class="text-muted f-w-400">{{caretaker.fees}}</h6>
+                    </div>
+                  </div>
+                <!-- <div class="col-md-3">
+                    <p class="m-b-10 f-w-600">Password</p>
+                    <h6 class="text-muted f-w-400" type="password">{{caretaker.password}}</h6>
+                  </div> -->
+              <!--  <div class="row">
+                  <div class="col-md-5">
+                    <p class="m-b-10 f-w-600">ID Proof</p>
+                    <h6 class="text-muted f-w-400">{{caretaker.idCard}}</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <p class="m-b-10 f-w-600">Date of Birth</p>
+                    <h6 class="text-muted f-w-400">{{caretaker.dob}}</h6>
+                  </div>
+                </div> -->
+              <!--  <div class="row">
+                  <h3>Address</h3>
+                  <div class="col-md-6">
+                    <p class="m-b-10 f-w-600">Plot Number</p>
+                    <h6 class="text-muted f-w-400">{{caretaker.address.plotNo}}</h6>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Street</p>
+                    <h6 class="text-muted f-w-400">{{caretaker.address.street}}</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <p class="m-b-10 f-w-600">City/Town Name</p>
+                    <h6 class="text-muted f-w-400">{{caretaker.address.town}}</h6>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">District</p>
+                    <h6 class="text-muted f-w-400">{{caretaker.address.district}}</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <p class="m-b-10 f-w-600">State</p>
+                    <h6 class="text-muted f-w-400">{{caretaker.address.state}}</h6>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Pincode</p>
+                    <h6 class="text-muted f-w-400">{{caretaker.address.pincode}}</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <p class="m-b-10 f-w-600">Gender</p>
+                    <h6 class="text-muted f-w-400">{{caretaker.gender}}</h6>
+                  </div>
+                </div> -->
+               <!-- <div class="row">
+                  <div class="col-md-5">
+                    <p class="m-b-10 f-w-600">Total Experience</p>
+                    <h6 class="text-muted f-w-400">{{caretaker.totalExperience}}</h6>
+                  </div>
+                  <div class="col-md-3">
+                    <p class="m-b-10 f-w-600">Fees</p>
+                    <h6 class="text-muted f-w-400">{{caretaker.fees}}</h6>
+                  </div>
+                </div> -->
+                <div *ngIf="caretaker.specialization =='Baby-sitting' ">
+                <ng-container *ngIf="caretaker.gender  == 'female', then femalep; else malep">
+                </ng-container>
+                <ng-template #malep>
+                  <p> Enjoys working with children and commited to promoting children's physical, mental,
+                    and emotional development in partnership with parents. -- {{caretaker.name}}
+                    <br>
+                   <br>
+                  {{caretaker.name}} is a <b>{{caretaker.specialization}}</b> Specialist in {{caretaker.address.town}}, 
+                    {{caretaker.address.district}} ( {{caretaker.address.state}}). He is very reliable, patient, positive,
+                    energetic and creative person who has approximately <b>{{caretaker.totalExperience}} years </b> of experience 
+                    caring for children, from toddlers to teenagers.  
+                    <br>
+                    <br>
+                     He lives at plot Number {{caretaker.address.plotNo}} , {{caretaker.address.street}} 
+                     in  {{caretaker.address.town}} , {{caretaker.address.district}}. 
+                    He has completed his education from Bangalore University, Karnataka, India in 2008. </p>
+                    
+                </ng-template>
+
+                <ng-template #femalep>
+
+                    <p> Enjoys working with children and commited to promoting children's physical, mental,
+                        and emotional development in partnership with parents. -- {{caretaker.name}}
+                        <br>
+                       <br>
+                      {{caretaker.name}} is a <b>{{caretaker.specialization}}</b> Specialist in {{caretaker.address.town}}, 
+                        {{caretaker.address.district}} ( {{caretaker.address.state}}). She is very reliable, patient, positive,
+                        energetic and creative person who has approximately <b>{{caretaker.totalExperience}} years </b> of experience 
+                        caring for children, from toddlers to teenagers.  
+                        <br>
+                        <br>
+                         She lives at plot Number {{caretaker.address.plotNo}} , {{caretaker.address.street}} 
+                         in  {{caretaker.address.town}} , {{caretaker.address.district}}. 
+                        She has completed her education from Bangalore University, Karnataka, India in 2008. </p>
+                </ng-template>
+              </div>
+
+              <div *ngIf="caretaker.specialization =='Elderly-care' ">
+                <ng-container *ngIf="caretaker.gender  == 'female', then femalep; else malep">
+                </ng-container>
+
+                <ng-template #malep>
+                  <p>Passionate about elder care and able to provide them both physical and emotional <br> 
+                    support.  -- -- {{caretaker.name}} 
+                    <br>
+                    <br>
+                    {{caretaker.name}} is a <b>{{caretaker.specialization}}</b> Specialist in {{caretaker.address.town}}, 
+                    {{caretaker.address.district}} ( {{caretaker.address.state}}). He is very Charismatic, Calm and Caring
+                    person who has approximately <b>{{caretaker.totalExperience}} years </b> of experience 
+                    caring for elderly people.  
+                    <br>
+                    <br>
+                     He lives at plot Number {{caretaker.address.plotNo}} , {{caretaker.address.street}} 
+                     in  {{caretaker.address.town}} , {{caretaker.address.district}}. 
+                    He has completed his education from Bangalore University, Karnataka, India in 2008. </p>
+
+                </ng-template>
+
+                <ng-template #femalep>
+                  <p>Passionate about elder care and able to provide them both physical and emotional <br> 
+                    support.  -- -- {{caretaker.name}} 
+                    <br>
+                    <br>
+                    {{caretaker.name}} is a <b>{{caretaker.specialization}}</b> Specialist in {{caretaker.address.town}}, 
+                    {{caretaker.address.district}} ( {{caretaker.address.state}}). She is very Charismatic, Calm and Caring
+                    person who has approximately <b>{{caretaker.totalExperience}} years </b> of experience 
+                    caring for elderly people.  
+                    <br>
+                    <br>
+                     She lives at plot Number {{caretaker.address.plotNo}} , {{caretaker.address.street}} 
+                     in  {{caretaker.address.town}} , {{caretaker.address.district}}. 
+                    She has completed her education from Bangalore University, Karnataka, India in 2008. </p>
+
+                </ng-template>
+
+                </div>
+
+                <div *ngIf="caretaker.specialization =='Special-needs' ">
+                  <ng-container *ngIf="caretaker.gender  == 'female', then femalep; else malep">
+                  </ng-container>
+  
+                  <ng-template #malep>
+                    <p>Able to understand Special needs person and help them in recognizing their Strength and gaining their  
+                      Confidence back.  -- -- {{caretaker.name}}.
+                      <br>
+                      <br>
+                      {{caretaker.name}} is a <b>{{caretaker.specialization}}</b> Specialist in {{caretaker.address.town}}, 
+                      {{caretaker.address.district}} ( {{caretaker.address.state}}). He is very Charismatic, Calm and Caring
+                      person who has approximately <b>{{caretaker.totalExperience}} years </b> of experience 
+                      caring for Special needs person.  
+                      <br>
+                      <br>
+                       He lives at plot Number {{caretaker.address.plotNo}} , {{caretaker.address.street}} 
+                       in  {{caretaker.address.town}} , {{caretaker.address.district}}. 
+                      He has completed his education from Bangalore University, Karnataka, India in 2008. </p>
+  
+                  </ng-template>
+  
+                  <ng-template #femalep>
+                    <p>Able to understand Special needs person and help them in recognizing their Strength and gaining their 
+                      Confidence back.  -- -- {{caretaker.name}}.
+                      <br>
+                      <br>
+                      {{caretaker.name}} is a <b>{{caretaker.specialization}}</b> Specialist in {{caretaker.address.town}}, 
+                      {{caretaker.address.district}} ( {{caretaker.address.state}}). She is very Charismatic, Calm and Caring
+                      person who has approximately <b>{{caretaker.totalExperience}} years </b> of experience 
+                      caring  Special needs person.  
+                      <br>
+                      <br>
+                       She lives at plot Number {{caretaker.address.plotNo}} , {{caretaker.address.street}} 
+                       in  {{caretaker.address.town}} , {{caretaker.address.district}}. 
+                      She has completed her education from Bangalore University, Karnataka, India in 2008. </p>
+  
+                  </ng-template>
+  
+                  </div>
+
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class = "card-body2">
+        <div class="row">
+          <div class="col-md-4">
+          </div>
+          <div  class="col-md-8 Additional_Service">
+           <h2 style="margin-left: 30%; margin-top: 8px;"> <b>Additional services I'm able to provide</b></h2>
+          </div>
+        </div>
+        <div *ngIf="caretaker.specialization =='Baby-sitting' ">
+        <div class="row">
+          <div class="col-md-4">
+              <button  color="success" (click)="sendCaretakerData()" mat-raised-button color="success">
+                    Hire
+                </button>
+          </div>
+          <div class="col-md-2">
+            <img style="margin-left:20%;" src="../../../assets/images/SchoolDroppingAssistance.jpg" class="facPhoto">
+          </div>
+          <div class="col-md-2">
+            <img style="margin-left: 20%;" src="../../../assets/images/tutor-icon-15.jpg" class="facPhoto">
+          </div>
+          <div class="col-md-2">
+            <img style="margin-left: 20%" src="../../../assets/images/MealPepAssistance.png" class="facPhoto">
+          </div>
+          <div class="col-md-2">
+            <img style="margin-left: 20%" src="../../../assets/images/CraftPracticeAssistance.png" class="facPhoto">
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="caretaker.specialization =='Elderly-care' ">
+        <div class="row">
+          <div class="col-md-4">
+              <button  color="success" (click)="sendCaretakerData()" mat-raised-button color="success">
+                    Hire
+                </button>
+          </div>
+          <div class="col-md-2">
+            <img style="margin-left: 20%;" src="../../../assets/images/.png" class="facPhoto">
+          </div>
+          <div class="col-md-2">
+            <img style="margin-left: 20%;" src="../../../assets/images/Nurshing1.png" class="facPhoto">
+          </div>
+          <div class="col-md-2">
+            <img style="margin-left: 20%" src="../../../assets/images/MealPrep1.png" class="facPhoto">
+          </div>
+          <div class="col-md-2">
+            <img style="margin-left: 20%" src="../../../assets/images/TravelAssistance.png" class="facPhoto">
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="caretaker.specialization =='Special-needs' ">
+        <div class="row">
+          <div class="col-md-4">
+              <button  color="success" (click)="sendCaretakerData()" mat-raised-button color="success" >
+                    Hire
+                </button>
+          </div>
+          <div class="col-md-2">
+            <img style="margin-left: 20%;" src="../../../assets/images/HousemaintanceAssistance.png" class="facPhoto">
+          </div>
+          <div class="col-md-2">
+            <img style="margin-left: 20%;" src="../../../assets/images/tutor-icon-15.jpg" class="facPhoto">
+          </div>
+          <div class="col-md-2">
+            <img style="margin-left: 20%" src="../../../assets/images/MealPrep1.png" class="facPhoto">
+          </div>
+          <div class="col-md-2">
+            <img style="margin-left: 20%" src="../../../assets/images/CraftPracticeAssistance.png" class="facPhoto">
+          </div>
+        </div>
+      </div>
+        
+       
+      </div>
+    </div>
+  </div>

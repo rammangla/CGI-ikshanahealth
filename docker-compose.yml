@@ -1,0 +1,231 @@
+version: "3"
+services:
+  eureka-server:
+    build: eureka-server/
+    container_name: eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8076:8076
+
+  api-gateway:
+    build: api-gateway/
+    container_name: api-gateway
+    #depends_on:
+    #- eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8080:8080
+
+  product-webapp:
+    build: product-webapp/
+    image: product-webapp
+    depends_on:
+      #- eureka-server
+      - api-gateway
+    restart: always
+    container_name: product-webapp
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - "4200:4200"
+
+  mysql:
+    image: mysql
+    container_name: mysql
+    network_mode: "host"
+    hostname: localhost
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: userauth
+      MYSQL_PASSWORD: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    volumes:
+      - ./mysql_data_container:/data/db
+    ports:
+      - 3306:3306
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    volumes:
+      - $HOME/data/db:/data/db
+    ports:
+      - 27017:27017
+
+  neo4j:
+    image: neo4j:latest
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    restart: always
+    environment:
+      - NEO4J_AUTH=neo4j/test
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4J_dbms_shell_enabled=true
+    volumes:
+      - ./plugins:/plugins
+      - $HOME/neo4j/data:/data
+      - ./import:/import
+
+  rabbitmq:
+    image: rabbitmq:3.7.5-management
+    hostname: localhost
+    network_mode: "host"
+    ports:
+      - 5672:5672
+      - 15672:15672
+
+    volumes:
+      - $HOME/data/rabbitmq:/var/lib/rabbitmq/mnesia/rabbit@app-rabbitmq:cached
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_DEFAULT_VHOST:
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.5.2
+    container_name: elasticsearch
+    environment:
+      - node.name=elasticsearch
+      - cluster.name=elasticsearch
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - 9200:9200
+      - 9300:9300
+
+  user-service:
+    build: user-service/
+    container_name: user-service
+    depends_on:
+      - mongo
+      - rabbitmq
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8083:8083
+
+  doctor-service:
+    build: doctor-service/
+    container_name: doctor-service
+    depends_on:
+      - mongo
+      - rabbitmq
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8087:8087
+
+  caretaker-service:
+    build: caretaker-service/
+    container_name: caretaker-service
+    depends_on:
+      - mongo
+      - rabbitmq
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8082:8082
+
+  user-auth-service:
+    build: user-auth-service/
+    container_name: user-auth-service
+    depends_on:
+      - mysql
+      - rabbitmq
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8888:8888
+
+  payment-service:
+    build: payment-service/
+    container_name: payment-servcie
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8089:8089
+
+  search-service:
+    build: search-service/
+    container_name: search-service
+    depends_on:
+      - elasticsearch
+      - rabbitmq
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8081:8081
+
+  book-appointment-service:
+    build: book-appointment-service/
+    container_name: book-appointment-service
+    depends_on:
+      - rabbitmq
+      - mongo
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8085:8085
+
+  schedular-service:
+    build: schedular-service/
+    container_name: schedular-service
+    depends_on:
+      - redis
+      - rabbitmq
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8086:8086
+
+  recommendation-service:
+    build: recommendation-service/
+    container_name: recommendation-service
+    depends_on:
+      - neo4j
+      - rabbitmq
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8099:8099
+
+  chat-service:
+    build: chat-service/
+    container_name: chat-service
+    depends_on:
+      - mongo
+      - rabbitmq
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 9099:9099
+
+  redis:
+    container_name: redis
+    image: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ../data/redis:/data
+    entrypoint: redis-server --appendonly yes
+    restart: always

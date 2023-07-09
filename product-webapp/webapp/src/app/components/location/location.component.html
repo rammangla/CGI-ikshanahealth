@@ -1,0 +1,511 @@
+<!--
+<h1 mat-dialog-title>Your Location</h1>
+<mat-dialog-actions>
+    <form target="_self" id="form1" method="get">
+        <label for="location"></label>
+        <div class="centric">
+            <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Lucknow" formtarget="_self" id="Lucknow"
+                (click)="onSubmit()">
+                <img src="../../../assets/bara-imambara.png">
+                <figcaption>Lucknow</figcaption>
+            </button>
+            <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Hyderabad" formtarget="_self" id="location"
+                (click)="onSubmit()">
+                <img src="../../../assets/charminar.png">
+                <figcaption>Hyderabad</figcaption>
+            </button>
+            <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Chennai" formtarget="_self" id="location"
+                (click)="onSubmit()">
+                <img src="../../../assets/chennai-central-railway-station.png">
+                <figcaption>Chennai</figcaption>
+            </button>
+            <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Mumbai" formtarget="_self" id="location"
+                (click)="onSubmit()">
+                <img src="../../../assets/gateway-of-india.png">
+                <figcaption>Mumbai</figcaption>
+            </button>
+            <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Jaipur" formtarget="_self" id="location"
+                (click)="onSubmit()">
+                <img src="../../../assets/hawa-mahal.png">
+                <figcaption>Jaipur</figcaption>
+            </button>
+            <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Kolkata" formtarget="_self" id="location"
+                (click)="onSubmit()">
+                <img src="../../../assets/victoria-memorial.png">
+                <figcaption>Kolkata</figcaption>
+            </button>
+            <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="New Delhi" formtarget="_self" id="location"
+                (click)="onSubmit()">
+                <img src="../../../assets/india-gate.png">
+                <figcaption>Delhi</figcaption>
+            </button>
+            <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Chandiragh" formtarget="_self" id="location"
+                (click)="onSubmit()">
+                <img src="../../../assets/open-hand-monument.png">
+                <figcaption>Chandigarh</figcaption>
+            </button>
+            <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Pune" formtarget="_self" id="location"
+                (click)="onSubmit()">
+                <img src="../../../assets/shaniwar-wada.png">
+                <figcaption>Pune</figcaption>
+            </button>
+            <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Agra" formtarget="_self" id="location"
+                (click)="onSubmit()">
+                <img src="../../../assets/tajmahal.png">
+                <figcaption>Agra</figcaption>
+            </button>
+            <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Surat" formtarget="_self" id="location"
+                (click)="onSubmit()">
+                <img src="../../../assets/surat-municipal-corporation.png">
+                <figcaption>Surat</figcaption>
+            </button>
+        </div>
+    -->
+<!--Read more button-->
+<!--
+        <div class="w3-display-middle">
+            <button type="button" class="w3-button w3-xlarge w3-circle w3-teal" (click)="toggleTag()"
+                id="readmore">+</button>
+        </div>
+        <div class="w3-display-container">
+            <div class="w3-row" id="more" *ngIf="showMe">
+                <div class="w3-col m3 l3">
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Dehradun" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Dehradun
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Nainital" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Nainital
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Shimla" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Shimla
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Srinagar" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Srinagar
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Manali" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Manali
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Jalandhar" formtarget="_self"
+                        id="location" (click)="onSubmit()">
+                        Jalandhar
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Rohtak" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Rohtak
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Karnal" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Karnal
+                    </button>
+                </div>
+                <div class="w3-col m3 l3">
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Ganganagar" formtarget="_self"
+                        id="location" (click)="onSubmit()">
+                        Ganganagar
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Jodhpur" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Jodhpur
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Kanpur" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Kanpur
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Paryagraj" formtarget="_self"
+                        id="location" (click)="onSubmit()">
+                        Paryagraj
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Haridwar" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Haridwar
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Aligarh" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Aligarh
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Patna" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Patna
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Bhuwaneshwar" formtarget="_self"
+                        id="location" (click)="onSubmit()">
+                        Bhuwaneshwar
+                    </button>
+                </div>
+                <div class="w3-col m3 l3">
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Aizwal" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Aizwal
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Dispur" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Dispur
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Gangtok" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Gangtok
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Imphal" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Imphal
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Vellore" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Vellore
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Kochi" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Kochi
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Vizag" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Vizag
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Pudduchery" formtarget="_self"
+                        id="location" (click)="onSubmit()">
+                        Pudduchery
+                    </button>
+                </div>
+                <div class="w3-col m3 l3">
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Mysore" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Mysore
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Indore" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Indore
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Bhopal" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Bhopal
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Gandhinagar" formtarget="_self"
+                        id="location" (click)="onSubmit()">
+                        Gandhinagar
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Tirupati" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Tirupati
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Raipur" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Raipur
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Ranchi" formtarget="_self" id="location"
+                        (click)="onSubmit()">
+                        Ranchi
+                    </button>
+                    <button [mat-dialog-close]="true" form="form1" type="submit" name="location" value="Jamshedpur" formtarget="_self"
+                        id="location" (click)="onSubmit()">
+                        Jamshedpur
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</mat-dialog-actions>
+-->
+<!--
+<div mat-dialog-actions>
+    <mat-horizontal-stepper #stepper>
+        <mat-step>
+     <mat-stepper [linear]="isLinear">
+        <mat-step [stepControl]="search1">
+            <form [formGroup]="search">
+                <ng-template matStepLabel>Your Location</ng-template>
+                <mat-form-field appearance="standard" floatLabel="auto">
+                    <mat-label>Your Location</mat-label>
+                    <mat-radio-group formControlName="location" required>
+                        <mat-radio-button value="Lucknow"><img src="../../../assets/bara-imambara.png" alt="Lucknow">
+                        </mat-radio-button>
+                        <mat-radio-button value="Hyderabad"><img src="../../../assets/charminar.png" alt="Hyderabad">
+                        </mat-radio-button>
+                        <mat-radio-button value="Chennai"><img src="../../../assets/chennai-central-railway-station.png"
+                                alt="Chennai"></mat-radio-button>
+                        <mat-radio-button value="Mumbai"><img src="../../../assets/gateway-of-india.png" alt="Mumbai">
+                        </mat-radio-button>
+                        <mat-radio-button value="Jaipur"><img src="../../../assets/hawa-mahal.png" alt="Jaipur">
+                        </mat-radio-button>
+                        <mat-radio-button value="Delhi"><img src="../../../assets/india-gate.png" alt="Delhi">
+                        </mat-radio-button>
+                        <mat-radio-button value="Chandigarh"><img src="../../../assets/open-hand-monument.png"
+                                alt="Chandigarh"></mat-radio-button>
+                        <mat-radio-button value="Kolkata"><img src="../../../assets/victoria-memorial.png"
+                                alt="Kolkata">
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </mat-form-field>
+                <div><button mat-fab (click)="toggleTag()">+</button></div>
+                <div class="w3-row" id="more" *ngIf="showMe">
+                    <mat-form-field floatLabel="auto" appearance="standard" [style.width.px]=800>
+                        <mat-label>Location</mat-label>
+                        <input matInput formControlName="location" placeholder="Enter Your Location(City/Town)"
+                            required>
+                        <mat-icon matSuffix>location_on</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <button mat-raised-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <form [formGroup]="search">
+                <ng-template matStepLabel>Pick Your Service</ng-template>
+                <mat-form-field floatLabel="auto" appearance="standard" [style.width.px]=800>
+                    <mat-label>Pick Your Service</mat-label>
+                    <mat-radio-group formControlName="typeOfService" required>
+                        <mat-radio-button value="Caretaker"><img src="/../../assets/caretaker.png" alt="caretaker">
+                        </mat-radio-button>
+                        <mat-radio-button value="Doctor"><img src="/../../assets/doctor.png" alt="Doctor">
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </mat-form-field>
+                <button type="submit" mat-raised-button (click)="onSubmit()" matStepperNext>Proceed</button>
+            </form>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Pick Your Service</ng-template>
+            <div *ngFor="let Doctor of doctorsList">
+                <div class="thumbnail">
+                    <mat-list style="text-align:center">
+                        <mat-list-item>
+                            <h2 matLine>Dr. {{Doctor.name}} </h2>
+                            <p matLine><b>Specialization</b> : {{Doctor.specialization}} </p>
+                            <p matLine><b>Email</b> : {{Doctor.emailId}} </p>
+                            <p matLine> {{Doctor.address.clinicName}}</p>
+                            <p matLine> {{Doctor.address.town}}</p>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+                <br>
+            </div>
+            <div *ngFor="let caretaker of caretakersList">
+                <div class="thumbnail">
+                    <mat-list style="text-align:center">
+                        <mat-list-item>
+                            <h2 matLine> {{caretaker.name}} </h2>
+                            <p matLine><b>Gender </b>: {{caretaker.gender}} </p>
+                            <p matLine><b>Email </b>: {{caretaker.emailId}} </p>
+                            <p matLine><b>Exp</b> : {{caretaker.totalExperience}} </p>
+
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+                <br>
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>
+-->
+<mat-horizontal-stepper #stepper>
+    <mat-step [stepControl]="search">
+        <form [formGroup]="search">
+            <ng-template matStepLabel>Your Location</ng-template>
+            <label for="location"></label>
+            <mat-radio-group aria-label="Select an option" formControlName="location" required *ngIf="hideMe">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <mat-radio-button value="Lucknow">
+                                <figure>
+                                    <img src="../../../assets/bara-imambara.png">
+                                    <figcaption>Lucknow</figcaption>
+                                </figure>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Hyderabad">
+                                <figure>
+                                    <img src="../../../assets/charminar.png">
+                                    <figcaption>Hyderabad</figcaption>
+                                </figure>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Chennai">
+                                <figure>
+                                    <img src="../../../assets/chennai-central-railway-station.png">
+                                    <figcaption>Chennai</figcaption>
+                                </figure>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Mumbai">
+                                <figure>
+                                    <img src="../../../assets/gateway-of-india.png">
+                                    <figcaption>Mumbai</figcaption>
+                                </figure>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Jaipur">
+                                <figure>
+                                    <img src="../../../assets/hawa-mahal.png">
+                                    <figcaption>Jaipur</figcaption>
+                                </figure>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Delhi">
+                                <figure>
+                                    <img src="../../../assets/india-gate.png">
+                                    <figcaption>New Delhi</figcaption>
+                                </figure>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Pune">
+                                <figure>
+                                    <img src="../../../assets/jhulta-minar.png">
+                                    <figcaption>Pune</figcaption>
+                                </figure>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Chandigarh">
+                                <figure>
+                                    <img src="../../../assets/open-hand-monument.png">
+                                    <figcaption>Chandigarh</figcaption>
+                                </figure>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Kolkata">
+                                <figure>
+                                    <img src="../../../assets/victoria-memorial.png">
+                                    <figcaption>Kolkata</figcaption>
+                                </figure>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Agra">
+                                <figure>
+                                    <img src="../../../assets/tajmahal.png">
+                                    <figcaption>Agra</figcaption>
+                                </figure>
+                            </mat-radio-button>
+                        </div>
+                    </div>
+                </div>
+            </mat-radio-group>
+            <br>
+            <div align="center">
+            <div class="centric">
+                <p style="font-size: large; margin-bottom: 6px;"><strong>Other Location</strong></p>
+                <button mat-fab (click)="toggleTag()">+</button>
+            </div>
+            <div  id="more" *ngIf="showMe">
+                <mat-form-field floatLabel="auto" appearance="standard" style="width:500px;">
+                    <mat-label>Location</mat-label>
+                    <input style="color: black;" matInput formControlName="location" placeholder="Enter Your Location(City/Town)"
+                        required>
+                    <mat-icon matSuffix>location_on</mat-icon>
+                </mat-form-field>
+            </div>
+            
+
+            <div>
+                <button mat-button matStepperNext class="bt-class">Next</button>
+            </div>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="search">
+        <form [formGroup]="search">
+            <ng-template matStepLabel>Pick Your Service</ng-template>
+            <label for="typeOfService"></label>
+            <mat-radio-group formControlName="typeOfService" required>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <mat-radio-button value="Baby-sitting">
+                                <figure>
+                                    <img src="../../../assets/images/baby-sitting.png" style="width: 40%;">
+                                    <figcaption>Baby sitting</figcaption>
+                                </figure>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Elderly-care">
+                                <figure>
+                                    <img src="../../../assets/images/elderly-care.png" style="width: 40%;">
+                                    <figcaption>Elder Care</figcaption>
+                                </figure>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Special-needs">
+                                <figure>
+                                    <img src="../../../assets/images/special-needs.png" style="width: 40%;">
+                                    <figcaption>Special needs</figcaption>
+                                </figure>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="doctor">
+                                <figure style="float: right;">
+                                    <img src="../../../assets/doctor.png" style="width: 40%;">
+                                    <figcaption>Doctor</figcaption>
+                                </figure>
+                            </mat-radio-button>
+                        </div>
+                    </div>
+                </div>
+            </mat-radio-group>
+            <div class="second">
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext style="float: right;" (click)="onSubmit()">Proceed</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <div *ngFor="let Doctor of doctorsList">
+            <div class="thumbnail">
+                <mat-list style="text-align:center">
+                    <mat-list-item>
+                        <h2 style="color: black;" matLine>Dr. {{Doctor.name}} </h2>
+                        <p matLine><b>Specialization</b> : {{Doctor.specialization}} </p>
+                         <p matLine><b>Email</b> : {{Doctor.emailId}} </p>
+                       <!-- <p matLine> {{Doctor.address.clinicName}}</p> -->
+                        <!-- <p matLine> {{Doctor.address.town}}</p> -->
+                        <button style="border-radius: 10px;
+            color: white;
+            background-color: #3c4043;" mat-button-raised
+          [routerLink]="['/userDoctorProfileView', Doctor.emailId]">View Doctor</button>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+            <br>
+        </div>
+        <div *ngFor="let caretaker of caretakersList">
+            <div class="thumbnail">
+                <mat-list style="text-align:center">
+                    <mat-list-item>
+                        <h2 style="color: black;" matLine> {{caretaker.name}} </h2>
+                        <p matLine><b>Gender </b>: {{caretaker.gender}} </p>
+                        <p matLine><b>Email </b>: {{caretaker.emailId}} </p>
+                        <!-- <p matLine><b>Exp</b> : {{caretaker.totalExperience}} </p> -->
+                        <button style="border-radius: 10px;
+            color: white;
+            background-color: #3c4043; padding: 8px;" mat-button-raised
+          [routerLink]="['/userCaretakerProfileView', caretaker.emailId]">View Caretaker</button>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+            <br>
+        </div>
+        <div class="second">
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()" style="float: right;">Reset</button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>
+
+

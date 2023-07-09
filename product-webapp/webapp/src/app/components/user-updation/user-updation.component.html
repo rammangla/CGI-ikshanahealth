@@ -1,0 +1,98 @@
+<h2 mat-dialog-title class="text-black">Update Info</h2>
+<mat-dialog-content>
+    <div class="parent">
+        <div class="container">
+            <form [formGroup]="form">
+                <div class="row">
+                    <div class="col-lg" align="right">
+                        <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline" [style.width.px]=327>
+                            <mat-label>Name</mat-label>
+                            <input matInput [ngModel]="data?.name" formControlName="name">
+                        </mat-form-field>
+
+                        <br />
+
+                        <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline" [style.width.px]=327>
+                            <mat-label>Email Id</mat-label>
+                            <input [ngModel]="data?.emailId" matInput formControlName="emailId">
+                            <mat-hint align="end" *ngIf="!emailIdInput.value">johndoe@gmail.com</mat-hint>
+                        </mat-form-field>
+                        <br />
+
+                        <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline" [style.width.px]=327>
+                            <mat-label>Date of Birth</mat-label>
+                            <input [ngModel]="data?.dob" matInput [matDatepicker]="myDatePicker" [max]="maxDate"
+                                formControlName="dob">
+                            <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+                            <mat-datepicker #myDatePicker startView="year"></mat-datepicker>
+                        </mat-form-field>
+                        <br />
+
+                        <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline" [style.width.px]=327>
+                            <mat-label>Gender</mat-label>
+                            <mat-select [ngModel]="data?.gender" formControlName="gender">
+                                <mat-option>None</mat-option>
+                                <mat-option value="male">Male</mat-option>
+                                <mat-option value="female">Female</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline" [style.width.px]=327>
+                            <mat-label>Phone Number</mat-label>
+                            <input matInput [ngModel]="data?.phoneNumber" formControlName="phoneNumber">
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline" [style.width.px]=327>
+                            <mat-label>Plot No.</mat-label>
+                            <input matInput [ngModel]="data?.address.plotNo" formControlName="plotNo">
+                        </mat-form-field>
+                        <br />
+                    </div>
+                    <div class="col-lg" align="left">
+                        <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline" [style.width.px]=327>
+                            <mat-label>Street</mat-label>
+                            <input matInput [ngModel]="data?.address.street" formControlName="street">
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline" [style.width.px]=327>
+                            <mat-label>City</mat-label>
+                            <input matInput [ngModel]="data?.address.town" formControlName="town">
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline" [style.width.px]=327>
+                            <mat-label>District</mat-label>
+                            <input matInput [ngModel]="data?.address.district" formControlName="district">
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline" [style.width.px]=327>
+                            <mat-label>State</mat-label>
+                            <input matInput [ngModel]="data?.address.state" formControlName="state">
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline" [style.width.px]=327>
+                            <mat-label>Pincode</mat-label>
+                            <input matInput [ngModel]="data?.address.pincode" formControlName="pincode">
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline" [style.width.px]=327>
+                            <mat-label>Password</mat-label>
+                            <input [ngModel]="data?.password" matInput placeholder="Password"
+                                [type]="hide ? 'password' : 'text'" formControlName="password">
+                            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
+                            </mat-icon>
+                            <mat-hint align="end" *ngIf="!passwordInput.value">Must contain atleast one caps, digit and
+                                special
+                                character</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <br />
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button type="submit" mat-raised-button mat-dialog-closed (click)="closeDialog()" color="success">Update</button>
+    <button type="submit" mat-raised-button mat-dialog-closed (click)="cancelDialog()" color="success">Cancel</button>
+</mat-dialog-actions>

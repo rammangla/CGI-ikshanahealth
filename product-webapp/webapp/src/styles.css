@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+        /* background-image: linear-gradient(to right, #777c7b, rgb(37, 36, 36)); */
+        background-color:   #3c4043;
+        /* color: white; */
+        text-transform: capitalize;
+     }
+h2,h1{
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    font-size:xx-large;
+    text-transform: capitalize;
+}
+mat-button,mat-raised-button{
+    background-color:   #36af9b;
+    border-color: #36af9b;
+    border-radius: 10px;
+}
+mat-card{
+    background: linear-gradient(rgba(153, 216, 202, 0.829),white);
+}
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white;
+  }
+  mat-list-option[aria-selected="true"] {
+    background: rgba(0, 139, 139, 0.7);
+  }
+
+  mat-form-field{
+    color: white;    
+}
+
+.mat-tab-label {
+    color: white;
+}
+
+@import '~bootstrap/dist/css/bootstrap.min.css';

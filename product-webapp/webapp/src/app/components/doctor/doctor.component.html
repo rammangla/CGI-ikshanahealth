@@ -1,0 +1,425 @@
+<div>
+    <h1 style="text-align: center; margin-left: 80px;" class="container" id="heading">Doctor's Registration</h1>
+    <!-- <mat-toolbar class="container" id="heading">
+        <span class="fill-remaining-space"></span>
+        <span style="margin-left: 120px;">Doctor's Registration</span>
+        <span class="fill-remaining-space"></span>
+    </mat-toolbar> -->
+</div>
+
+<!-- First step in doctor -->
+<mat-horizontal-stepper linear>
+    <mat-step >
+        
+        <h2 class="container" id="heading">
+            <span text-center style="margin-left: 120px; color: black;">Details of doctor</span>
+        </h2>
+        
+        <div fxLayout="row wrap" fxLayoutGap="18px grid" class="first-container">
+            <div fxFlex="50%" fxFlex.xs="100%" fxFlex.md="50%">
+                <form [formGroup]="registerFormGrp">
+                    <p>
+                        <mat-form-field appearance="outline" class="fields">
+                            <mat-label>Full Name</mat-label>
+                            <input matInput formControlName="fullName" placeholder="Full name">
+                            <mat-icon matSuffix>person_pin</mat-icon>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline" class="fields">
+                            <mat-label>Email ID</mat-label>
+                            <input matInput formControlName="email" type="email" placeholder="Email">
+                            <mat-icon matSuffix>email</mat-icon>
+                            <!-- <mat-hint text-align="end" *ngIf="!emailIdInput.value">johndoe@gmail.com</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline" class="fields">
+                            <mat-label>Date of Birth</mat-label>
+                            <input type="date" formControlName="dob" matInput placeholder="Date of Birth">
+                            <!-- <mat-icon matSuffix>insert_invitation</mat-icon> -->
+                        </mat-form-field>
+                    </p>
+                </form>
+            </div>
+
+            <div fxFlex="50%" fxFlex.xs="100%" fxFlex.md="50%">
+                <form [formGroup]="registerFormGrp">
+                    <p>
+                        <mat-form-field appearance="outline" class="fields">
+                            <mat-label>Gender</mat-label>
+                        <mat-select formControlName="gender">
+                            <mat-option value="none">Gender</mat-option>
+                            <mat-option value="male">Male</mat-option>
+                            <mat-option value="female">Female</mat-option>
+                        </mat-select>  
+                            <mat-icon matSuffix>person</mat-icon>
+                            <!-- <mat-hint>Press F for female and M for male</mat-hint> -->
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline" class="fields">
+                            <mat-label>Phone no.</mat-label>
+                            <input formControlName="phone" type="long" matInput placeholder="Phone no.">
+                            <mat-icon matSuffix>phone</mat-icon>
+                            <mat-hint>Enter 10 digit phone no.</mat-hint>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline" class="fields">
+                            <mat-label>Address</mat-label>
+                            <input matInput formControlName="address" type="address" placeholder="Address">
+                            <mat-icon matSuffix>location_on</mat-icon>
+                            <mat-hint>Clinic name, Plot, Street, City, Dist., State, Pincode seperated by comma</mat-hint>
+                        </mat-form-field>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <button mat-button matStepperNext class="item2" id="third-step" style="margin-top: 2px;">Next</button>
+    </mat-step>
+
+    <!-- Second step in doctor -->
+    <mat-step>
+        
+        <h2 class="container" id="heading">
+            <span text-center style="margin-left: 120px; color: black;">Skills</span>
+        </h2>
+        <div fxLayout="row wrap" fxLayoutGap="18px grid" class="first-container">
+            <div fxFlex="50%" fxFlex.xs="100%" fxFlex.md="50%">
+                <form [formGroup]="registerFormGrp">
+                    <p>
+                        <mat-form-field appearance="outline" class="fields">
+                            <mat-label>Educational Qualification</mat-label>
+                            <input matInput formControlName="edu" placeholder="Educational Qualification">
+                            <mat-icon matSuffix>person_pin</mat-icon>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline" class="fields">
+                            <mat-label>Aadhar Card</mat-label>
+                            <input matInput formControlName="icard" placeholder="Enter Your Aadhar Card Number">
+                            <mat-icon matSuffix>person_pin</mat-icon>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline" class="fields">
+                            <mat-label>License no.</mat-label>
+                            <input matInput formControlName="license" placeholder="License no.">
+                            <mat-icon matSuffix>person_pin</mat-icon>
+                        </mat-form-field>
+                    </p>
+
+                </form>
+            </div>
+
+            <div fxFlex="50%" fxFlex.xs="100%" fxFlex.md="50%">
+                <form [formGroup]="registerFormGrp">
+                    <p>
+                        <mat-form-field appearance="outline" class="fields">
+                            <mat-label>Experience</mat-label>
+                            <input matInput formControlName="experience" placeholder="Experience">
+                            <mat-icon matSuffix>person_pin</mat-icon>
+                            <mat-hint>Enter experience in years</mat-hint>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'"
+                                formControlName="password">
+                            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            <mat-hint text-align="end" *ngIf="!passwordInput.value">Must contain atleast one caps, digit and
+                                special
+                                character</mat-hint>
+                        </mat-form-field>
+                        
+                    </p>
+                    <p>
+                        <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline"  style="color: black;" >
+                            <mat-label style="color: black;">Confirm Password</mat-label>
+                            <input  style="color: black;" matInput placeholder="Password" [type]="hide1 ? 'password' : 'text'"
+                                formControlName="confirmpassword">
+                            <mat-icon   style="color: black;" matSuffix (click)="hide1 = !hide1">{{hide1 ? 'visibility_off' : 'visibility'}}
+                            </mat-icon>
+                            <mat-hint text-align="end" *ngIf="!confirmpasswordInput.value">Enter password again</mat-hint>
+                        </mat-form-field>
+                    </p>
+                    
+                    
+                </form>
+            </div>
+        </div>
+        
+        <button mat-button matStepperPrevious class="item2" id="fourth-step" style="margin-top: 2px;">Back</button>
+        <button mat-button matStepperNext class="item2" id="third-step" style="margin-top: 2px;">Next</button> 
+    </mat-step>
+
+
+    <!-- Third step in doctor -->
+    <mat-step>
+        <form [formGroup]="registerFormGrp">
+            <h2 class="container" id="heading">
+                <span text-center style="margin-left: 120px; color: black;">Specialization</span>
+            </h2>
+            <mat-radio-group aria-label="Select an option" formControlName="specialization">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <mat-radio-button value="General">
+                                <mat-card class="mat-elevation-z4" style="margin-bottom: 40px;">
+                                    <mat-card-header>
+                                        <mat-card-title id="head2">General Physician</mat-card-title>
+                                    </mat-card-header>
+                                        <div class="card-content-wrapper">
+                                            <span class="check-icon"></span>
+                                            <div class="card-content">
+                                                <img src="../../../assets/images/general.jpg"  style="display: block; margin: 0 auto;">
+                                            </div>
+                                        </div>
+                                </mat-card>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Paediatrics">
+                                <mat-card class="mat-elevation-z4" style="margin-bottom: 40px;">
+                                    <mat-card-header>
+                                        <mat-card-title id="head2">Paediatrician</mat-card-title>
+                                    </mat-card-header>
+                                        <div class="card-content-wrapper">
+                                            <span class="check-icon"></span>
+                                            <div class="card-content">
+                                                <img src="../../../assets/images/paediatrician.jpg"  style="display: block; margin: 0 auto;">
+                                            </div>
+                                        </div>
+                                </mat-card>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Psychiatry">
+                                <mat-card class="mat-elevation-z4" style="margin-bottom: 40px;">
+                                    <mat-card-header>
+                                        <mat-card-title id="head2">Psychiatrist</mat-card-title>
+                                    </mat-card-header>
+                                        <div class="card-content-wrapper">
+                                            <span class="check-icon"></span>
+                                            <div class="card-content">
+                                                <img src="../../../assets/images/psychiatry.jpg"  style="display: block; margin: 0 auto;">
+                                            </div>
+                                        </div>
+                                </mat-card>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Orthopedics">
+                                <mat-card class="mat-elevation-z4" style="margin-bottom: 40px;">
+                                    <mat-card-header>
+                                        <mat-card-title id="head2">Orthopedist</mat-card-title>
+                                    </mat-card-header>
+                                        <div class="card-content-wrapper">
+                                            <span class="check-icon"></span>
+                                            <div class="card-content">
+                                                <img src="../../../assets/images/orthopedist.jpg"  style="display: block; margin: 0 auto;">
+                                            </div>
+                                        </div>
+                                </mat-card>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Dermatology">
+                                <mat-card class="mat-elevation-z4" style="margin-bottom: 40px;">
+                                    <mat-card-header>
+                                        <mat-card-title id="head2">Dermatologist</mat-card-title>
+                                    </mat-card-header>
+                                        <div class="card-content-wrapper">
+                                            <span class="check-icon"></span>
+                                            <div class="card-content">
+                                                <img src="../../../assets/images/dermatology.jpg"  style="display: block; margin: 0 auto;">
+                                            </div>
+                                        </div>
+                                </mat-card>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Treating Allergies">
+                                <mat-card class="mat-elevation-z4" style="margin-bottom: 40px;">
+                                    <mat-card-header>
+                                        <mat-card-title id="head2">Allergist</mat-card-title>
+                                    </mat-card-header>
+                                        <div class="card-content-wrapper">
+                                            <span class="check-icon"></span>
+                                            <div class="card-content">
+                                                <img src="../../../assets/images/allergist.jpg"  style="display: block; margin: 0 auto;">
+                                            </div>
+                                        </div>
+                                </mat-card>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="ENT">
+                                <mat-card class="mat-elevation-z4" style="margin-bottom: 40px;">
+                                    <mat-card-header>
+                                        <mat-card-title id="head2">ENT</mat-card-title>
+                                    </mat-card-header>
+                                        <div class="card-content-wrapper">
+                                            <span class="check-icon"></span>
+                                            <div class="card-content">
+                                                <img src="../../../assets/images/ent.jpg"  style="display: block; margin: 0 auto;">
+                                            </div>
+                                        </div>
+                                </mat-card>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Gynaecology">
+                                <mat-card class="mat-elevation-z4" style="margin-bottom: 40px;">
+                                    <mat-card-header>
+                                        <mat-card-title id="head2">Gynaecologist</mat-card-title>
+                                    </mat-card-header>
+                                        <div class="card-content-wrapper">
+                                            <span class="check-icon"></span>
+                                            <div class="card-content">
+                                                <img src="../../../assets/images/gynaecologist-home.jpg"   style="display: block; margin: 0 auto;">
+                                            </div>
+                                        </div>
+                                </mat-card>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Dentistry">
+                                <mat-card class="mat-elevation-z4" style="margin-bottom: 40px;">
+                                    <mat-card-header>
+                                        <mat-card-title id="head2">Dentist</mat-card-title>
+                                    </mat-card-header>
+                                        <div class="card-content-wrapper">
+                                            <span class="check-icon"></span>
+                                            <div class="card-content">
+                                                <img src="../../../assets/images/dentist-home.jpg"  style="display: block; margin: 0 auto;">
+                                            </div>
+                                        </div>
+                                </mat-card>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Nutrition">
+                                <mat-card class="mat-elevation-z4" style="margin-bottom: 40px;">
+                                    <mat-card-header>
+                                        <mat-card-title id="head2">Dietician</mat-card-title>
+                                    </mat-card-header>
+                                        <div class="card-content-wrapper">
+                                            <span class="check-icon"></span>
+                                            <div class="card-content">
+                                                <img src="../../../assets/images/dietitian.jpg"  style="display: block; margin: 0 auto;">
+                                            </div>
+                                        </div>
+                                   
+                                </mat-card>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Cardiology">
+                                <mat-card class="mat-elevation-z4" style="margin-bottom: 40px;">
+                                    <mat-card-header>
+                                        <mat-card-title id="head2">Cardiologist</mat-card-title>
+                                    </mat-card-header>
+                                        <div class="card-content-wrapper">
+                                            <span class="check-icon"></span>
+                                            <div class="card-content">
+                                                <img src="../../../assets/images/cardiology.jpg"  style="display: block; margin: 0 auto;">
+                                            </div>
+                                        </div>
+                                </mat-card>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Urology">
+                                <mat-card class="mat-elevation-z4" style="margin-bottom: 40px;">
+                                    <mat-card-header>
+                                        <mat-card-title id="head2">Urologist</mat-card-title>
+                                    </mat-card-header>
+                                        <div class="card-content-wrapper">
+                                            <span class="check-icon"></span>
+                                            <div class="card-content">
+                                                <img src="../../../assets/images/urology.jpg"  style="display: block; margin: 0 auto;">
+                                            </div>
+                                        </div>
+                                </mat-card>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Radiology">
+                                <mat-card class="mat-elevation-z4" style="margin-bottom: 40px;">
+                                    <mat-card-header>
+                                        <mat-card-title id="head2">Radiologist</mat-card-title>
+                                    </mat-card-header>
+                                        <div class="card-content-wrapper">
+                                            <span class="check-icon"></span>
+                                            <div class="card-content">
+                                                <img src="../../../assets/images/radiology.jpg"  style="display: block; margin: 0 auto;">
+                                            </div>
+                                        </div>
+                                </mat-card>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Neurology">
+                                <mat-card class="mat-elevation-z4" style="margin-bottom: 40px;">
+                                    <mat-card-header>
+                                        <mat-card-title id="head2">Neurologist</mat-card-title>
+                                    </mat-card-header>
+                                        <div class="card-content-wrapper">
+                                            <span class="check-icon"></span>
+                                            <div class="card-content">
+                                                <img src="../../../assets/images/Neurology.jpg"  style="display: block; margin: 0 auto;">
+                                            </div>
+                                        </div>
+                                </mat-card>
+                            </mat-radio-button>
+                        </div>
+                        <div class="col">
+                            <mat-radio-button value="Immunology">
+                                <mat-card class="mat-elevation-z4" style="margin-bottom: 40px;">
+                                    <mat-card-header>
+                                        <mat-card-title id="head2">Immunologist</mat-card-title>
+                                    </mat-card-header>
+                                        <div class="card-content-wrapper">
+                                            <span class="check-icon"></span>
+                                            <div class="card-content">
+                                                <img src="../../../assets/images/immunology.jpg"  style="display: block; margin: 0 auto;">
+                                            </div>
+                                        </div>
+                                </mat-card>
+                            </mat-radio-button>
+                        </div>
+                    </div>
+                </div>
+            </mat-radio-group>
+            <button mat-button matStepperNext class="item2" id="third-step"  type="submit" style="margin-top: 2px;" (click)="onSubmit()">Next</button> 
+            <!-- <button mat-button matStepperNext class="bt-class" (click)="onSubmit()">Next</button> -->
+        </form>
+    </mat-step>
+        
+<!-- Fourth step in doctor -->
+    <mat-step >
+        <div class="cont text-center" *ngIf=showSuccess>
+            <div class="item">
+                <h1>SUCCESS</h1>
+            </div>
+            <div class="inside">
+                <p> Congratulations!</p>
+                <p>You are successfully registered on Ikshanahealth.</p>
+            </div>
+            <button class="item2" routerLink="/login">OK</button>
+        </div>
+        <div class="cont text-center" *ngIf=showFail>
+            <div class="item">
+                <h1>FAIL</h1>
+            </div>
+            <div class="inside">
+                <p>Oooops!</p>
+                <p>You are unable to registered on Ikshanahealth.</p>
+            </div>
+            <button class="item2" routerLink="/doctor">TRY AGAIN!</button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>

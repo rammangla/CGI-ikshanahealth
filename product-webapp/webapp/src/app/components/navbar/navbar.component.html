@@ -1,0 +1,34 @@
+<mat-toolbar class="navbar">
+    <mat-icon class="icon">health_and_safety</mat-icon>
+    <!-- <span><a mat-button routerLink="home" class="logo" style="width: 10px; height: 10px;">
+        <img src="../../../assets/images/logo.jpg">
+    </a></span> -->
+    <!-- <img src="../../../assets/images/logo.jpg"> -->
+    <span>
+        <a mat-button routerLink="home" class="logo">
+            IkshanaHealth
+        </a>
+    </span>
+    <div class="spacer"></div>
+    <a mat-button *ngIf="loginService.getUserRole()=='user'" routerLink='/user-dashboard'><span>Dashboard</span></a>
+    <a mat-button *ngIf="loginService.getUserRole()=='doctor'" routerLink='/doctordashboard'><span>Dashboard</span></a>
+    <a mat-button *ngIf="loginService.getUserRole()=='caretaker'" routerLink='/caretakerdashboard'><span>Dashboard</span></a>
+    &nbsp; &nbsp;
+    <a mat-button (click)="openDialog()">
+        <span>Select City</span>
+    </a><mat-icon class="icon" style="color: #3c4043;">location_on</mat-icon>&nbsp; &nbsp;
+    <a mat-button routerLink="/search">
+        <span>Find Doctors or Caretakers</span>
+    </a><mat-icon class="icon" style="color: #3c4043;">search</mat-icon>&nbsp; &nbsp;
+    <a mat-button *ngIf="!loginService.isLoggedIn()" routerLink="/viewdoctors">
+        <span>Doctors</span>
+    </a>
+    <a mat-button *ngIf="!loginService.isLoggedIn()" routerLink="/viewcaretakers">
+        <span>Caretakers</span>
+    </a>
+    <a mat-button routerLink="/news">
+        <span>News</span>
+    </a>&nbsp;<mat-icon class="icon" style="color: #3c4043;">library_books</mat-icon> &nbsp; &nbsp;
+    <a *ngIf="!(loginService.isLoggedIn() || loginService.isOtpPresent())" mat-raised-button class="login" routerLink="login">Login</a>
+    <a (click)="removeData()" *ngIf="loginService.isLoggedIn() || loginService.isOtpPresent()" mat-raised-button class="logout">Logout</a>
+</mat-toolbar>

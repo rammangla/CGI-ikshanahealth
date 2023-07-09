@@ -1,0 +1,62 @@
+<div class="parent">
+    <mat-card>
+        <mat-card class="card-container" style="float: left; background-color: #198875;">
+            <h1 style="color: white; margin-left: 140px;"><b>Welcome Back</b></h1>
+            <mat-tab-group mat-stretch-tabs>
+                <mat-tab label="Password">
+                    <form [formGroup]="passwordloginform">
+                        <div class="input">
+                            <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline" [style.width.px]=450>
+                                <mat-label style="color: white;">Enter Email Id</mat-label>
+                                <input type="email" required matInput formControlName="username" />
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline" [style.width.px]=450>
+                                <mat-label style="color: white;">Enter Password</mat-label>
+                                <input type="password" matInput formControlName="password" />
+                            </mat-form-field>
+                        </div>
+                        <button (click)=" getAuthenticated()" mat-raised-button style="background-color: #e8f7f3;">Login</button>
+                        <div>
+                            <h5>New User ?</h5>
+                            <h3 style="color: white;"><a routerLink="/register" 
+                            routerLinkActive="active">Register Here-->
+                            </a></h3>
+                        </div>
+                    </form>
+                </mat-tab>
+    
+    
+                <mat-tab label="OTP" style="color: white;">
+                    <form [formGroup]="loginform">
+                        <div class="input">
+                            <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline" [style.width.px]=450>
+                                <mat-label style="color: white;">Enter Email Id</mat-label>
+                                <input type="email" required matInput formControlName="username" />
+                            </mat-form-field>
+                        </div>
+                        <button  (click)="getOtp()" mat-raised-button style="background-color: #e8f7f3;">Get OTP</button>
+                        {{message }}
+                        <br />
+                        <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline" [style.width.px]=450>
+                            <mat-label style="color: white;">Enter OTP</mat-label>
+                            <input  matInput formControlName="otpnumber" />
+                        </mat-form-field>
+                        <br />
+                        <button (click)="checkOtp()" mat-raised-button style="background-color: #e8f7f3;">Login</button>
+                        <div>
+                            <h5>New User ?</h5>
+                            <h3 style="color: black;"><a routerLink="/register" 
+                            routerLinkActive="active">Register Here-->
+                            </a></h3>
+                        </div>
+                    </form>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card>
+        <mat-card style="float: right;  margin-left: 60px; margin-right: 40px; margin-top: 35px;">
+            <img src="../../../assets/images/login.jpg" style="width: 400px; height: 300px;">
+        </mat-card>
+    </mat-card>
+</div>

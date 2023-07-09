@@ -1,0 +1,41 @@
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .mat-submit{
+    background-color: #198875;
+    color: #fff;
+  }
+
+  .mat-success{
+    background-color: #198875 !important;
+    color: rgb(0, 0, 0);
+    
+  }
+
+  .mat-card{
+    background-color: #198875 !important;
+  }
+
+  hr{
+    border-top: solid white;
+  }
+
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white!important;
+    
+}
+::ng-deep .mat-form-field-label {
+  color: black !important;
+}
+::placeholder { 
+  color: white;
+  font-weight:500;
+  opacity: 1; 
+}
+  

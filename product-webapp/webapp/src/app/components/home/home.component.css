@@ -1,0 +1,339 @@
+
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700') */
+/* body {
+    background-color: #24262b;
+} 
+ .home-col {
+    padding: 0;
+    text-align: left;
+}
+
+.home-col-location {
+    padding: 0;
+    text-align: center;
+}
+
+.home-location-color {
+    margin-top: 80px;
+    background-color: #F2F3F4;
+} */
+
+/* h1 {
+    font-family: Montserrat;
+    font-size: 55px;
+    font-weight: 800;
+    color: #48c9b0;
+    margin-bottom: 28px;
+}
+
+p {
+    font-family: Montserrat;
+    font-size: 20px;  
+}
+
+.check-icon {
+    color: #48c9b0;
+}
+
+h2 {
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 100px;
+    text-align: center;
+}
+
+h3 {
+    font-family: Montserrat;
+    font-size: 35px;
+    font-weight: 400;
+    text-align: center;
+    color: #117A65;
+}
+.back p {
+    font-family: Montserrat;
+    font-size: 20px; 
+    text-align: center;
+}
+
+.back h3::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: white;
+	height: 2px;
+	box-sizing: border-box;
+	width: 60px;
+}
+
+.register-col {
+    padding: 0 15px;
+    text-align: center; 
+    background-color: black; 
+}
+
+.registration {
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+
+.btn {
+    margin-top: 10px;
+    background-color: #117A65 ;
+    margin-bottom: 20px;
+    color: white;
+} */
+
+/* button.mat-button {
+    border-radius: 0;
+    background-color: #48c9b0;
+}
+
+.home-story{
+    padding-top: 5px;
+    background-color: #F2F3F4;
+}  */
+
+/* for flipcard */
+/* .card-container {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    -webkit-perspective: 500px;
+    perspective: 500px;
+}
+
+.flippable-card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+}
+
+.flippable-card mat-card {
+    margin: 0;
+    display: block;
+    position: absolute;
+    width: 352px;
+    height: 352px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.flippable-card .back {
+    transform: rotateY( 180deg );
+    background-image: linear-gradient(#48c9b0, white);
+}
+
+.flippable-card.flipped {
+    transform: rotateY( 180deg );
+}
+
+.text {
+    position: absolute;
+    background: rgba(11, 83, 69, 0.72);
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+    transition: opacity .2s, visibility .2s;
+}
+
+.flippable-card:hover .text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.register-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    height: fit-content;
+ }
+  */
+ /*.item {
+     height: 100px;
+ } */
+
+ /* .flipcards {
+     background-color: black;
+ } */
+
+ /* .register-col p {
+     color: white;
+ }*/
+
+
+
+/* 
+ Tamanna's Code */
+/* .container{
+     position: relative;
+     width: 100%;
+ }
+.container img{
+     width: 100%;
+     height: 100%;
+     opacity: .7;
+ } */
+
+
+
+ /* First section css */
+ .first-section{
+     margin-bottom: 5em;
+ }
+ h2{
+    margin-top: 20px; 
+    color: black;
+    margin-left: 80px; 
+    font-weight:bold; 
+    /* font-style: italic; */
+    /* font-family: Roboto, "Helvetica Neue", sans-serif;  */
+    font-family: Montserrat;
+    font-size:xx-large;
+    text-transform: capitalize;
+ }
+ #doctor {
+     margin-left: 70px;
+     background-color:   #36af9b;
+     border-color: #36af9b;
+     border-radius: 10px;
+ }
+ #caretaker {
+     margin-left: 80px;
+     border-radius: 10px;
+     background-color:  #36af9b;
+     border-color: #36af9b;
+  }
+  .item {
+    margin-bottom: 30px;
+    margin-left: 100px;
+    margin-top: 25px;
+  }
+  p{
+    width: 50%;
+     margin-left: 80px;
+      text-align: justify;
+  }
+  #second {
+      color: white;
+  }
+
+
+  /* Second and third section css */
+  h4 {
+    margin-top: 20px; 
+    color:black; 
+    text-align: justify;
+    font-family: Montserrat, "Helvetica Neue", sans-serif; 
+    font-size: 15px; 
+  }
+  h3 {
+    margin-top: 20px; 
+    color:black; 
+    font-weight:bold; 
+    font-family: Montserrat, "Helvetica Neue", sans-serif; 
+    font-size: 25px;
+    text-align: center;
+  }
+  #sub-head {
+      text-align: center;
+  }
+
+  /* Fourth section */
+  
+/* section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #50af9c;
+    overflow: hidden;
+}
+.swiper-container{
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.swiper-slide{
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+} */
+
+
+   /* Fifth section css */
+   .image {
+       display: flex;
+        justify-content: center;
+   }
+   #article {
+       margin-left: 75px;
+   }
+   .container{
+       padding: auto;
+       width: 200em;
+       min-width: fit-content;
+       min-height: fit-content;
+   }
+   .col-md-12 h2{
+       text-align: center;
+       font-family: Montserrat, "Helvetica Neue", sans-serif; 
+       /* color: black; */
+       /* font-style: italic; */
+       font-size:xx-large;
+   }
+   .mat-card-avatar img{
+       size: 20px;
+       width: 20px;
+       border-radius: 50%;
+   }
+   .checked{
+       color:gold;
+   }
+    mat-card{
+       margin-bottom: 5em;
+       border-radius: 20px;
+       background: linear-gradient(#198875,white);
+   }
+   .center {
+       text-align: center;
+       margin-top: 4em;
+   }
+  
+  .flip-card-inner {
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-back {
+    transform: rotateY(180deg);
+    text-align: start;
+    position:sticky;
+  }
+  .card-content-wrapper{
+      display: grid;
+  }
+  .card-content-1{
+      grid-column: 1;
+      grid-row: 1;
+  }
+  .card-content-2{
+      grid-column: 1;
+      grid-row:1;
+  }

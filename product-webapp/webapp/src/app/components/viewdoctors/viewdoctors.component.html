@@ -1,0 +1,49 @@
+<h1 style=" font-weight: bold; color: white; margin-top: 30px;" align="center">Our Doctors</h1>
+<div class="table" style="background-color: #3C4043; margin: 0 auto; margin-top: 20px;">
+    <div class="leftcolumn" fxLayout="wrap row" fxLayout.xs="column" fxLayoutGap="5%" fxLayoutAlign="center">
+      
+      <div *ngFor="let Doctor of doctorsList" fxFlex="28%">
+        <!-- <div class="thumbnail"> -->
+          <div class="flip-card" style="
+          top:0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <ng-container *ngIf="Doctor.gender  == 'female', then femaleimg; else maleimg">     
+                </ng-container>
+                <ng-template #maleimg>
+                  <img src="../../../assets/images/male1.png" style="width:130px;height:130px;">
+                </ng-template>
+                <ng-template #femaleimg>
+                  <img src="../../../assets/images/female1.png"style="width:130px;height:130px;">
+                </ng-template>
+                <br>
+                <br>
+                <p matLine style="color: black;"><b>This is Dr. {{Doctor.name}}</b> </p>
+                <p matLine>Specialized in {{Doctor.specialization}} </p>
+                <p matLine>Fees : 750 Rs. </p>
+                <p matLine>Available Full-time</p>
+                <br>
+              </div>
+              <div class="flip-card-back" style="padding-top: 60px;">
+              <p matLine><b>Email</b> : {{Doctor.emailId}} </p>
+              <p matLine><b>Clinic Name</b> : {{Doctor.address.clinicName}}</p>
+              <p matLine><b>Location</b> : {{Doctor.address.town}}</p>
+              </div>
+            </div>
+          </div>
+          <br>
+          <button style="border-radius: 10px;
+              color: white;
+              background-color: #198875;" mat-button-raised
+            [routerLink]="['/userDoctorProfileView', Doctor.emailId]">View Profile</button>
+        <!-- </div> -->
+          <br>
+          <br>
+          <br>
+      </div>
+    </div>
+</div>

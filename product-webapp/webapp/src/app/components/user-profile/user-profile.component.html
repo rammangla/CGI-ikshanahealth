@@ -1,0 +1,84 @@
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-xl-6 col-md-12">
+                <div class="card user-card-full">
+                    <div class="row m-l-0 m-r-0">
+                        <div class="col-sm-4 bg-c-lite-green user-profile">
+                            <div class="card-block text-center text-dark">
+                                <div class="m-b-25">
+                                    <ng-container *ngIf="user.gender  == 'female', then femaleProf; else maleProf">
+                                        Welcome!!
+                                    </ng-container>
+                                    <ng-template #maleProf>
+                                        <img src="../../../assets/images/male.png" class="img-radius">
+                                    </ng-template>
+                                    <ng-template #femaleProf>
+                                        <img src="../../../assets/images/female.png" class="img-radius">
+                                    </ng-template>
+                                </div>
+                                <h6 class="f-w-600"><span>{{user.name}}</span></h6>
+                                <p><span>{{user.emailId}}</span></p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                <button mat-icon-button (click)="openDialog()">
+                                    <mat-icon>border_color</mat-icon>
+                                </button>
+                                <hr/>
+                                <a [routerLink]="['/user-dashboard']"><h4>&lt;&lt;Back to Dashboard</h4></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-block">
+                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <p class="m-b-10 f-w-600">Date of Birth</p>
+                                        <h6 class="text-muted f-w-400">{{user.dob}}</h6>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p class="m-b-10 f-w-600">Gender</p>
+                                        <h6 class="text-muted f-w-400">{{user.gender}}</h6>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p class="m-b-10 f-w-600">Phone</p>
+                                        <h6 class="text-muted f-w-400">{{user.phoneNumber}}</h6>
+                                    </div>
+                                </div>
+                                <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Address</h6>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Plot</p>
+                                        <h6 class="text-muted f-w-400">{{user.address.plotNo}}</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Street</p>
+                                        <h6 class="text-muted f-w-400">{{user.address.street}}</h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">City</p>
+                                        <h6 class="text-muted f-w-400">{{user.address.town}}</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">District</p>
+                                        <h6 class="text-muted f-w-400">{{user.address.district}}</h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">State</p>
+                                        <h6 class="text-muted f-w-400">{{user.address.state}}</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Pincode</p>
+                                        <h6 class="text-muted f-w-400">{{user.address.pincode}}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

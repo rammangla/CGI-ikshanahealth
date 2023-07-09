@@ -1,0 +1,72 @@
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .alert {
+    padding: 20px;
+    background-color: #198875;
+    border-color: azure;
+    color: white;
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+
+  button{
+    width:50%;
+    margin-left:25%;
+    margin-right:25%;
+    margin-top: 15px;
+  }
+
+  .mat-submit{
+    background-color: #198875;
+    color: #fff;
+  }
+
+  mat-label{
+    color: #fff;
+  }
+
+  ::placeholder{
+    color: white;
+    opacity: 1;
+}
+
+.Card-detail{
+  background-color:   #36af9b;
+   
+}
+.Heading{
+  margin-left:30%;
+  color:black;
+}
+.card-body{
+  font-family: Montserrat, "Helvetica Neue", sans-serif; 
+    font-size:medium;
+    line-height: 1.6;
+}
+.card-body.Card-Form{
+  background-color: #3c4043;
+   
+}
+.Card-detail-Form{
+  margin-top:70px;
+}
+ 

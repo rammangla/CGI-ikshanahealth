@@ -1,0 +1,29 @@
+mat-dialog-content{
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+mat-form-field{
+    color: black;
+}
+
+input:disabled{
+    color: black;
+}
+
+.mat-success{
+    background-color: #198875;
+    color: #fff;
+}
+
+mat-label{
+    color: black;
+}
+
+::placeholder{
+    color: black;
+    opacity: 1;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black !important;
+  }

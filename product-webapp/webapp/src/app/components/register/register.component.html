@@ -1,0 +1,110 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <mat-card style="margin-top:190px;margin-left:60px;" class="Card-detail">
+                <div>
+                    <div class="card-body">
+                        <h2 class="Heading"><b>Why Register ?</b></h2>
+                        <mat-icon>check_circle</mat-icon>&nbsp;&nbsp;&nbsp;<span><b>Consult Doctors Anytime</b></span>
+                        <br>
+
+                        <mat-icon>check_circle</mat-icon>&nbsp;&nbsp;&nbsp;<span><b>No Travel. No Waiting Queue. Comfort <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of 
+                            Your Home </b></span> <br>
+                        <mat-icon>check_circle</mat-icon>&nbsp;&nbsp;&nbsp;<span><b>Trusted by millions and serving
+                                users <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;world Wide
+                            </b></span>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col-md-8">
+            <div class="parent" style="margin-top:150px;">
+                <h1 class="bg-aqua"><b>Create a new account</b></h1>
+                <div class="container">
+                    <form [formGroup]="form" (ngSubmit)=onSubmit()>
+                        <div class="row">
+                            <div class="col-lg" align="right">
+                                <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline"
+                                    [style.width.px]=327>
+                                    <mat-label>Name</mat-label>
+                                    <input matInput formControlName="name">
+                                </mat-form-field>
+                                <br />
+                                <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline"
+                                    [style.width.px]=327>
+                                    <mat-label>Email Id</mat-label>
+                                    <input matInput formControlName="emailId">
+                                    <mat-hint align="end" *ngIf="!emailIdInput.value" style="color: white;">johndoe@gmail.com</mat-hint>
+                                </mat-form-field>
+                                <br />
+
+                                <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline"
+                                    [style.width.px]=327>
+                                    <mat-label>Date of Birth</mat-label>
+                                    <input matInput [matDatepicker]="myDatePicker" [max]="maxDate"
+                                        formControlName="dob">
+                                    <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+                                    <mat-datepicker #myDatePicker startView="year"></mat-datepicker>
+                                </mat-form-field>
+                                <br />
+                            </div>
+                            <div class="col-lg" align="left">
+                                <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline"
+                                    [style.width.px]=327>
+                                    <mat-label>Gender</mat-label>
+                                    <mat-select formControlName="gender">
+                                        <mat-option>None</mat-option>
+                                        <mat-option value="male">Male</mat-option>
+                                        <mat-option value="female">Female</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <br />
+                                <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline"
+                                    [style.width.px]=327>
+                                    <mat-label>Password</mat-label>
+                                    <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'"
+                                        formControlName="password">
+                                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' :
+                                        'visibility'}}</mat-icon>
+                                    <mat-hint align="end" *ngIf="!passwordInput.value" style="color: white;">Must contain atleast one caps,
+                                        digit and
+                                        special
+                                        character</mat-hint>
+                                </mat-form-field>
+                                <br />
+                                <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline"
+                                    [style.width.px]=327>
+                                    <mat-label>Confirm Password</mat-label>
+                                    <input matInput placeholder="Password" [type]="hide1 ? 'password' : 'text'"
+                                        formControlName="confirmpassword">
+                                    <mat-icon matSuffix (click)="hide1 = !hide1">{{hide1 ? 'visibility_off' :
+                                        'visibility'}}
+                                    </mat-icon>
+                                    <mat-hint align="end" *ngIf="!confirmpasswordInput.value" style="color: white;">Enter password again
+                                    </mat-hint>
+                                </mat-form-field>
+
+                                <br />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button type="submit" mat-raised-button color="submit">Submit</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+            <br />
+            <div class="row m-5">
+                <div *ngIf="isSubmitted" class="alert" align="center">
+                    <span class="closebtn"
+                        onclick="this.parentElement.style.display='none';window.location.reload();">&times;</span>
+                    <mat-icon>build</mat-icon>
+                    {{message}}
+                </div>
+            </div>
+        </div>
+</div>
+</div>

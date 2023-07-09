@@ -1,0 +1,235 @@
+<div class="main-content padding">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 ">
+        <div class="card doctor-profile-card-full">
+          <div class="card-body1">
+            <ng-container *ngIf="doctor.gender  == 'female', then femaleimg; else maleimg">
+            </ng-container>
+            <ng-template #maleimg>
+              <img src="../../../assets/images/male1.png" class="img-radius">
+            </ng-template>
+            <ng-template #femaleimg>
+              <img src="../../../assets/images/female1.png" class="img-radius">
+            </ng-template>
+            <!-- <h2 class="m-b-10 f-w-600" style=" color: white;">Facilities</h2> 
+              <div class="row"  *ngFor="let facility of doctor.facilities">
+                 <h6 class="text-muted f-w-400">{{facility}}</h6>
+              </div>-->
+            <div class="introHighlight">
+
+              <h3><b>{{doctor.name}}</b></h3>
+              <h3>{{doctor.educationalQualification}}</h3>
+              <h3>{{doctor.specialization}}</h3>
+              <h3>{{doctor.totalExperience}} Years Experience</h3>
+              <mat-icon>verified_user</mat-icon> &nbsp; &nbsp;<span>Registration Verified</span>
+              <br>
+              <mat-icon>thumb_up</mat-icon>&nbsp; &nbsp;&nbsp; &nbsp;<span class="vote"><b>100%</b> (1206 votes) </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 ">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">{{doctor.name}} </h4>
+          </div>
+          <div class="card-body">
+            <ng-container *ngIf="doctor.gender  == 'female', then femalep; else malep">
+            </ng-container>
+            <!-- ---------------------------------------------------------------------- -->
+            <ng-template #malep>
+              <p>"Every patient and their family are different,with their own unique 
+                needs. My goal is to provide an individual treatment plan to help each 
+                and every one of my patient to acheive the best outcome possible" --{{doctor.name}}
+                <br>
+                <br>
+                {{doctor.name}} is a <b>{{doctor.specialization}}</b> Specialist in {{doctor.address.town}},
+                {{doctor.address.district}} ( {{doctor.address.state}}) and has an experience of
+                <b>{{doctor.totalExperience}} years </b> in this field.
+
+                {{doctor.name}} practices at {{doctor.address.clinicName}} plot Number
+                {{doctor.address.plotNo}},{{doctor.address.street}} in {{doctor.address.town}},
+                {{doctor.address.district}}. He completed {{doctor.educationalQualification}} from RIMS Ranchi,
+                Jharkhand,
+                India in 2003.
+                <br>
+                <br>
+                He is a member of Indian Medical Association (IMA),Neurological Society of India.
+              </p>
+            </ng-template>
+
+
+            <ng-template #femalep>
+              <p>{{doctor.name}} is a <b>{{doctor.specialization}}</b> Specialist in {{doctor.address.town}},
+                {{doctor.address.district}} ( {{doctor.address.state}}) and has an experience of
+                <b>{{doctor.totalExperience}} years </b> in this field.
+                <br>
+                {{doctor.name}} practices at {{doctor.address.clinicName}} plot Number
+                {{doctor.address.plotNo}},{{doctor.address.street}} in {{doctor.address.town}},
+                {{doctor.address.district}}. She completed {{doctor.educationalQualification}} from RIMS Ranchi,
+                Jharkhand,
+                India in 2003.
+                <br>
+                <br>
+                She is a member of Indian Medical Association (IMA),Neurological Society of India.
+              </p>
+            </ng-template>
+            <!-- . 
+              <form>
+                <div class="row">
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Full Name</p>
+                    <h6 class="text-muted f-w-400">{{doctor.name}}</h6>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Gender</p>
+                    <h6 class="text-muted f-w-400">{{doctor.gender}}</h6>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Email Id</p>
+                    <h6 class="text-muted f-w-400">{{doctor.emailId}}</h6>
+                  </div>
+           .       -->
+            <!-- --------------------------------------------------------- -->
+            <!-- <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Date of Birth</p>
+                    <h6 class="text-muted f-w-400">{{doctor.dob}}</h6>
+                  </div> -->
+            <!-- -----------     </div> -->
+            <!-- <div class="row">
+                  <div class="col-md-6">
+                    <p class="m-b-10 f-w-600">Phone Number</p>
+                    <h6 class="text-muted f-w-400">{{doctor.phoneNumber}}</h6>
+                  </div>
+                </div>-->
+            <!-- ---------      <div class="row"> -->
+            <!-- <div class="col-md-6">
+                    <p class="m-b-10 f-w-600">ID Proof</p>
+                    <h6 class="text-muted f-w-400">{{doctor.idCard}}</h6>
+                  </div>-->
+            <!-- --------------------------------------------------- -->
+            <!-- . 
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Educational Qualification</p>
+                    <h6 class="text-muted f-w-400">{{doctor.educationalQualification}}</h6>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Specialization</p>
+                    <h6 class="text-muted f-w-400">{{doctor.specialization}}</h6>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Total Experience</p>
+                    <h6 class="text-muted f-w-400">{{doctor.totalExperience}}</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Phone Number</p>
+                    <h6 class="text-muted f-w-400">{{doctor.phoneNumber}}</h6>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Fees</p>
+                   <h6 class="text-muted f-w-400">{{doctor.fees}}</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <h3>Address</h3>
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Clinic/Hospital Name</p>
+                    <h6 class="text-muted f-w-400">{{doctor.address.clinicName}}</h6>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Plot Number</p>
+                    <h6 class="text-muted f-w-400">{{doctor.address.plotNo}}</h6>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Street</p>
+                    <h6 class="text-muted f-w-400">{{doctor.address.street}}</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">City/Town Name</p>
+                    <h6 class="text-muted f-w-400">{{doctor.address.town}}</h6>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">District</p>
+                    <h6 class="text-muted f-w-400">{{doctor.address.district}}</h6>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">State</p>
+                    <h6 class="text-muted f-w-400">{{doctor.address.state}}</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <p class="m-b-10 f-w-600">Pincode</p>
+                    <h6 class="text-muted f-w-400">{{doctor.address.pinCode}}</h6>
+                  </div>
+                </div>
+                .-->
+            <!-- ------------------------------------------------------ -->
+            <!--<div class="row">
+                  <div class="col-md-6">
+                    <p class="m-b-10 f-w-600">Gender</p>
+                    <h6 class="text-muted f-w-400">{{doctor.gender}}</h6>
+                  </div> 
+                  <div class="col-md-6">
+                    <p class="m-b-10 f-w-600">License Number</p>
+                    <h6 class="text-muted f-w-400">{{doctor.licenseNumber}}</h6>
+                  </div> 
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Specialization</p>
+                    <h6 class="text-muted f-w-400">{{doctor.specialization}}</h6>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Total Experience</p>
+                    <h6 class="text-muted f-w-400">{{doctor.totalExperience}}</h6>
+                  </div>
+                  <div class="col-md-4">
+                    <p class="m-b-10 f-w-600">Fees</p>
+                   <h6 class="text-muted f-w-400">{{doctor.fees}}</h6>
+                  </div>
+                </div> -->
+            <!-- --------------------------------------------------------- -->
+            <!-- </form> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body2">
+      <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div  class="col-md-8 clinicFac">
+         <h2 style="margin-left: 45%; margin-top: 8px;"> <b> Clinic Facilities</b></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <button class="bookAppointment" color="success" (click)="sendDoctorData( )" mat-raised-button color="success">
+            Book Appointment
+          </button>
+        </div>
+        <div class="col-md-2">
+          <img style="margin-left: 0%;" src="../../../assets/images/ambulance.png" class="facPhoto">
+        </div>
+        <div class="col-md-2">
+          <img style="margin-left: 0%" src="../../../assets/images/call.png" class="facPhoto">
+        </div>
+        <div class="col-md-2">
+          <img style="margin-left: 0%" src="../../../assets/images/insurance.png" class="facPhoto">
+        </div>
+        <div class="col-md-2">
+          <img style="margin-left: 0%" src="../../../assets/images/bed.jpg" class="facPhoto">
+        </div>
+      </div>
+      <!-- <div class="row"> </div> -->
+      <!-- <div class="col"> -->
+      <!-- </div> -->
+    </div>
+  </div>
+</div>

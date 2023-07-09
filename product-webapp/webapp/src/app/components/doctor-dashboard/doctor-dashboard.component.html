@@ -1,0 +1,142 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+        <ng-container *ngIf="doctor.gender  == 'female', then femaleimg; else maleimg">
+
+        </ng-container>
+        <ng-template #maleimg>
+          <img src="../../../assets/images/male1.png" class="img-radius">
+        </ng-template>
+        <ng-template #femaleimg>
+          <img src="../../../assets/images/female1.png" class="img-radius">
+        </ng-template>
+        <h3 style="text-align: center;">Welcome,{{doctor.name}}</h3>
+        <button mat-raised-button class="profile" routerLink="/doctorprofileview"> My Profile</button>
+        <div class="centric">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Total Earning</mat-card-title>
+                    <mat-card-subtitle>(in Rs.)</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <h2 style="text-align: center; color: black;">
+                        {{Earning()}}
+                    </h2>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="centric">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Total Patients</mat-card-title>
+                    <mat-card-subtitle>(treated)</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <h2 style="text-align: center; color: black;">
+                        {{Patients()}}
+                    </h2>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-10">
+                    <!-- <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th>Patient Name</th>
+                                <th>Date of Birth</th>
+                                <th >Gender</th>
+                                <th>Slot</th>
+                                <th>Action</th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody *ngFor="let newRecent of recent">
+                            <tr>
+                                <td class="text-center"></td>
+                                <td>{{newRecent.patientDetails.patientName}}</td>
+                                <td>{{newRecent.patientDetails.dob}}</td>
+                                <td class="text-right">{{newRecent.patientDetails.gender}}</td>
+                                <td>{{newRecent.slot}}</td>
+                                <td> 
+                                    <button mat-icon-button color="success" aria-label="Example icon button with a menu icon" [routerLink]="['/chat']" [queryParams]="{ name: '  ',room:'  '}">
+                                        <mat-icon>message</mat-icon>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+                </div>
+            </div>
+            <div class="row">
+                <!-- <div class="col-lg-6"> -->
+                    <mat-card class="mat-elevation-z4 appoint">
+                        <h2 text-align="center">Previous Appointments</h2>
+                        <hr>
+                        <ng-container *ngIf="previous.length !=0, then slots; else previousMessage" text-align="center">
+                            Welcome!!
+                        </ng-container>
+                        <ng-template #slots>
+                            <mat-card class="example-card mb-5 mr-3" *ngFor="let newPrevious of previous">
+                                <mat-card-header>
+                                    <mat-card-title class="mt-4">
+                                        {{newPrevious.patientDetails.patientName}},{{newPrevious.date}}
+                                    </mat-card-title>
+                                    <mat-card-subtitle>
+                                        {{newPrevious.patientDetails.gender}}, {{newPrevious.slot}}
+                                    </mat-card-subtitle>
+                                </mat-card-header>
+                                <hr />
+                                <mat-card-actions>
+                                    <button class="ml-4 mb-4" type="submit" mat-raised-button color="success">Patient's
+                                        Profile</button>
+                                </mat-card-actions>
+                            </mat-card>
+                        </ng-template>
+                        <ng-template #previousMessage>
+                            <mat-card>
+                                <h3>No Previous Appointments</h3>
+                            </mat-card>
+                        </ng-template>
+                    </mat-card>
+                <!-- </div> -->
+                <!-- <div class="col"> -->
+                    <mat-card class="mat-elevation-z4 appoint">
+                        <h2 text-align="center">Upcoming Appointments</h2>
+                        <hr>
+                        <ng-container *ngIf="upcoming.length !=0, then slots1; else upcomingMessage" text-align="center">
+                            Welcome!!
+                        </ng-container>
+                        <ng-template #slots1>
+                            <mat-card class="example-card mb-5 mr-3" *ngFor="let newUpcoming of upcoming">
+                                <mat-card-header>
+                                    <mat-card-title class="mt-4">
+                                        {{newUpcoming.patientDetails.patientName}},{{newUpcoming.date}}
+                                    </mat-card-title>
+                                    <mat-card-subtitle>
+                                        {{newUpcoming.patientDetails.gender}}, {{newUpcoming.slot}}
+                                    </mat-card-subtitle>
+                                </mat-card-header>
+                                <mat-card-actions>
+                                    <button mat-icon-button color="success" aria-label="Example icon button with a menu icon" (click)="startChat(newUpcoming.patientDetails.phoneNumber, newUpcoming.date, newUpcoming.slot, doctor.name)">
+                                        <mat-icon>message</mat-icon>
+                                    </button>
+                                </mat-card-actions>
+                            </mat-card>
+                        </ng-template>
+                        <ng-template #upcomingMessage>
+                            <mat-card>
+                                <h2 style="color: black;">No Upcoming Appointments</h2>
+                            </mat-card>
+                        </ng-template>
+                    </mat-card>
+                   
+                <!-- </div> -->
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

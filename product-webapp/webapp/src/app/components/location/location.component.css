@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&effect=grass');
+@import url('https://www.w3schools.com/w3css/4/w3.css');
+/*
+h2,h1{
+    color: black;
+    font-style: italic;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    font-size:xx-large;
+    text-align: center;
+}
+.centric{
+    margin-left:14em;
+}
+button{
+    margin-right: 1em;
+    border: none;
+    background: none;
+    opacity: .6;
+    display: inline-block;
+}
+button:hover{
+    opacity:1;
+}
+img:hover{
+    opacity: 1;
+}
+.w3-display-middle{
+    height:30%;
+}
+.w3-display-middle button{
+    text-shadow: 2px 2px 3px black;
+}
+.w3-display-container{
+    margin-top:9.2em;
+}
+.w3-display-container button{
+    display:block;
+    margin:auto;
+    background: none;
+    border: none;
+}
+.w3-display-container button:hover{
+    background-color: rgb(181, 247, 225);
+}
+*/
+.bt-class{
+    background-color: #36af9b;
+    margin-top: 2em;
+    display: block;
+    text-decoration: none;
+    width: 200px;
+}
+mat-radio-button, mat-radio-group{
+    display: inline;
+}
+.second{
+    display: inline;
+    margin-top: 5em;
+}
+.mat-stepper-horizontal {
+    margin-top: 8px;
+  }
+.mat-form-field {
+    margin-top: 16px;
+}
+.mat-radio-button ~ .mat-radio-button {
+    display: inline;
+  }
+.second button{
+    background-color: #36af9b;
+    display: inline;
+    margin-top: 3em;
+    width:200px;
+}

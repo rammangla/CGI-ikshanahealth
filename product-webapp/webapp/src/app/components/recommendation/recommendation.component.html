@@ -1,0 +1,48 @@
+<div class="table" style="background-color: #3C4043; margin: 0 auto; margin-top: 20px;">
+    <div *ngIf="doctorRecommendationList == null">
+        <h4 align="center" style="color: white">Sorry, No recommendations for you...!!</h4>
+    </div>
+    <div *ngIf="doctorRecommendationList != null">
+        <h2 align="center" style="color: white">Here are some doctor recommendations for you...!!</h2>
+    </div>
+    <br />
+    <br />
+    <div class="container" fxLayout="wrap row" fxLayout.xs="column" fxLayoutGap="5%" fxLayoutAlign="center">
+        <div *ngFor="let doctor of doctorRecommendationList" fxFlex="28%">
+            <div class="flip-card" style="top:0; bottom:0; left:0; right:0; margin: auto;">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <br>
+                        <br>
+                        <ng-container *ngIf="doctor.gender  == 'female', then femaleimg; else maleimg">
+                        </ng-container>
+
+                        <ng-template #maleimg>
+                            <img src="../../../assets/images/male1.png" style="width:130px;height:130px;">
+                        </ng-template>
+                        <ng-template #femaleimg>
+                            <img src="../../../assets/images/female1.png" style="width:130px;height:130px;">
+                        </ng-template>
+                        <br>
+                        <br>
+
+                        <p matLine style="color: black"><b>This is Dr. {{doctor.name}}</b></p>
+                        <p matLine>Specialized in {{doctor.specialization.speciality}}</p>
+                    </div>
+                    <div class="flip-card-back" style="padding-top: 80px;">
+                        <p matLine style="color: white"><b>Email: </b> {{ doctor.emailId }}</p>
+                        <p matLine style="color: white"><b>Location: </b> {{ doctor.address.town }}</p>
+                    </div>
+                </div>
+                <br>
+                <button style="border-radius: 10px;
+                color: white;
+                background-color: #198875;" mat-button-raised
+                    [routerLink]="['/userDoctorProfileView', doctor.emailId]">View Profile</button>
+
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>

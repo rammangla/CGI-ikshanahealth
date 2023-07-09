@@ -1,0 +1,14 @@
+#doctor {
+    background-color: #3c4043;
+    color:whitesmoke;
+    border-radius: 10px;
+
+}
+mat-form-field{
+    color: black;    
+}
+
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black!important;
+    
+}

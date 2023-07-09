@@ -1,0 +1,55 @@
+.example-container {
+  position: absolute;
+  top: 65px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+mat-drawer{
+  width: 215px;
+  background : #198875;
+  border-right: 2px solid black;
+}
+mat-drawer-content{
+  background-color: #3c4043;
+  color: whitesmoke;
+}
+mat-drawer img {
+  width: 40%;
+  margin-left:4.4em;
+  margin-top: 1em;
+  margin-bottom: 1.4em;
+}
+.profile{
+  margin-left: 3.5em;
+  background-color: #3c4043;
+  color:whitesmoke;
+}
+mat-drawer-content{
+  background-color: #3c4043;
+  color: whitesmoke;
+}
+.centric{
+  margin:1.5em;
+}
+mat-card{
+  background: #d8e9dc;
+  width:fit-content;
+}
+.table{
+  margin-top: 3em;
+  margin-left:5em;
+}
+ul{
+  background-color: white;
+}
+.mat-elevation-z4  {
+  background-color: #198875;
+  margin-top: 2em;
+  margin-left: 10em;
+}
+#caretaker {
+  width: fit-content;
+  background-color: #198875 ;
+  margin-top: 2em;
+}

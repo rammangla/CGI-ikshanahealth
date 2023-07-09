@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Open+Sans:wght@300&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+mat-toolbar {
+    padding-left: 100px;
+    padding-right: 100px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.navbar {
+    /* background-color:   #2d5f57; */
+    /* background-color: #098043; */
+    background-color: #198875;
+    /* background-color:   #2f6e62;  */
+    
+}
+
+.icon {
+    color: white;
+}
+
+.logo {
+    font-size: 32px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+}
+
+a {
+    color: white;
+    font-size: 18px;
+    font-family: 'Montserrat';
+}
+
+.login {
+    border-radius: 10px;
+    border-color: #3b7e6d;
+    background-color: #3c4043;
+    float: right;
+    margin-left: 30px;
+    /* background-color: #161a19;
+    border-color: #36af9b; */
+    /* background-color: rgb(68, 208, 212); */
+}
+.logout {
+    border-radius: 10px;
+    border-color: #36af9b;
+    background-color: #3c4043;
+}
+a:hover {
+    text-decoration: none;
+    background-color: #3c4043;
+    border-radius: 10px;
+}

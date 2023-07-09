@@ -1,0 +1,15 @@
+spring:
+  rabbitmq:
+    host: localhost
+    username: guest
+    password: guest
+    port: 15672
+    exchange:
+      doctor: doctor.exchange
+      caretaker: caretaker-search.exchange
+    queue:
+      doctor: doctor.queue
+      caretaker: caretaker-search.queue
+    routingkey:
+      doctor: doctor.routingkey
+      caretaker: caretaker-search.routingkey

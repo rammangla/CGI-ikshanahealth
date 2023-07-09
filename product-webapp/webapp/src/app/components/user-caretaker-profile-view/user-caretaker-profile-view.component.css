@@ -1,0 +1,101 @@
+
+.padding {
+    padding: 3rem !important
+}
+h6 {
+    font-size: 14px
+}
+
+.img-radius {
+    border-radius: 5px;
+    width:50%;
+
+}
+body {
+    background-color: #f9f9fa
+}
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    border: none;
+    margin-bottom: 30px;
+    
+}
+
+.card-body1 {
+    padding: 1.25rem;
+    width: 250px;
+    height: 390px;    
+}
+
+.col-md-8   {
+    display: inline-block
+}
+.text-muted {
+    color: #919aa3 !important
+}
+.card-title {
+    color:white;
+    font-size: 30px;
+    margin-left: 40%;
+     
+
+}
+.card-category{
+    font-size: 20px;
+}
+
+#caretaker {
+    background-color:   #36af9b;
+    border-color: #36af9b;
+    border-radius: 10px;
+    margin-top: 150px;
+}
+
+.caretaker-profile-card-full {
+    background-color:   #36af9b;
+
+}
+.card-body{
+    /* background: linear-gradient(#198875,white); */
+    font-family: Montserrat, "Helvetica Neue", sans-serif; 
+    font-size:large;
+    line-height: 1.6;
+}
+.card-header-danger{
+    background-color:   #36af9b;
+    /* background: linear-gradient(#198875,white); */
+    font-family: Montserrat, "Helvetica Neue", sans-serif; 
+
+}
+.mat-success{
+    background-color: #198875;
+    color: #fff;
+    margin-left: 40%;
+  }
+
+
+.mat-icon{
+    color: white;
+}
+img
+{
+    width: 100px;
+    height: 100px;
+    margin-left: 70%;
+}
+.Additional_Service{
+    background-color: #198875;
+    color: white;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    
+   height: 50px;
+}
+.facPhoto{
+    width: 38%;
+}
+.vote{
+    color:white;
+}

@@ -1,0 +1,14 @@
+.card{
+    width:400px;
+    height:300px;
+    
+}
+.card-header
+{
+    height: 120px;
+}
+
+.mat-success{
+    background-color: #1dd168;
+    color: #fff;
+}

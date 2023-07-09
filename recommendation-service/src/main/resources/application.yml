@@ -1,0 +1,21 @@
+spring:
+  rabbitmq:
+    host: localhost
+    password: guest
+    port: 5672
+    username: guest
+    exchange:
+      user: user.exchangeb
+      doctor: doctor.exchange2
+      caretaker: caretaker-recommendation.exchange
+      appointment: appointment.exchangec
+    queue:
+      user: user.queueb
+      doctor: doctor.queue2
+      caretaker: caretaker-recommendation.queue
+      appointment: appointment.queuec
+    routingkey:
+      user: user.routingkeyb
+      doctor: doctor.routingkey2
+      caretaker: caretaker-recommendation.routingkey
+      appointment: appointment.routingkeyc

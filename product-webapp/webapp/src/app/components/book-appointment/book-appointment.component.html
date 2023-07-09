@@ -1,0 +1,70 @@
+<div class="parent">
+    <h1><b>Book Appointment</b></h1>
+    <div class="container">
+
+        <form [formGroup]="form" (ngSubmit)=onSubmit() align="center">
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+
+                    <mat-form-field class="mr-3" floatLabel="auto" hideRequiredMarker appearance="outline"
+                        [style.width.px]=327>
+                        <mat-label style="color: white;">Date of Booking</mat-label>
+                        <input matInput [matDatepicker]="myDatePicker" formControlName="appDate" [min]="date">
+                        <mat-datepicker-toggle [for]="myDatePicker" matSuffix style="color: white;"></mat-datepicker-toggle>
+                        <mat-datepicker #myDatePicker startView="month"></mat-datepicker>
+                    </mat-form-field>
+                    <button type="submit" class="ml-3" mat-raised-button color="submit">Show Slots</button>
+                    <br />
+                </div>
+                <div class="col-lg-3">
+                    <br />
+                </div>
+            </div>
+        </form>
+
+        <br>
+        <br>
+    </div>
+    <div class="container w-50 pl-5">
+        <div class="row">
+            <ng-container *ngIf="isSubmitted, then slots; else err" align="center">
+                Welcome!!
+            </ng-container>
+            <ng-template [ngSwitch]="day" #slots>
+                <h2 align="center">Available slots for the date</h2>
+                <hr />
+                <div *ngSwitchCase="'today'">
+                    <button class="m-4" (click)="OnslotSubmit(item.key.split('_'))" type="submit" mat-raised-button
+                        color="success" *ngFor="let item of todayMap | keyvalue" [style.width.px]=172
+                        [disabled]="slotSubmitted" [routerLink]="['/payment']">{{item.key | split: "_"}}</button>
+                </div>
+                <div *ngSwitchCase="'tomorrow'">
+                    <button class="m-4" (click)="OnslotSubmit(item.key.split('_'))" type="submit" mat-raised-button
+                        color="success" *ngFor="let item of tomorrowMap | keyvalue" [style.width.px]=172
+                        [disabled]="slotSubmitted" [routerLink]="['/payment']">{{item.key | split: "_"}}</button>
+                </div>
+                <div *ngSwitchCase="'overmorrow'">
+                    <button class="m-4" (click)="OnslotSubmit(item.key.split('_'))" type="submit" mat-raised-button
+                        color="success" *ngFor="let item of overmorrowMap | keyvalue" [style.width.px]=172
+                        [disabled]="slotSubmitted" [routerLink]="['/payment']">{{item.key | split: "_"}}</button>
+                </div>
+                <div *ngSwitchDefault>
+                    <mat-card>
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <h1>No Slots Available</h1>
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                    </mat-card>
+                </div>
+            </ng-template>
+            <ng-template #err>
+                <h2 align="center">Enter valid date to see slots</h2>
+            </ng-template>
+        </div>
+    </div>
+
+</div>

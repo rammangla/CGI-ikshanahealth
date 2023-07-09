@@ -1,0 +1,65 @@
+<div id="join-page">
+    <div class="chat-container">
+        <!-- <div class="chat-header" style="text-align: center;">
+            <h1>Chat Service</h1>
+        </div>
+            <form [formGroup]="chat">
+
+                <mat-form-field floatLabel="auto" appearance="outline" [style.width.px]=700>
+                    <mat-label style="color: white; font-weight:bold; letter-spacing:1px;">Enter Name:</mat-label>
+                    <input matInput formControlName="name" placeholder="Enter Name ">
+                </mat-form-field>
+                <mat-form-field floatLabel="auto" appearance="outline" [style.width.px]=700>
+                    <mat-label style="color: white; font-weight:bold; letter-spacing:1px;">Enter Room ID:</mat-label>
+                    <input matInput formControlName="room" placeholder="Enter ID ">
+                </mat-form-field> -->
+                <div align="center" *ngIf=!showchat>
+                <img src="../../../assets/images/chat-image.png" />
+                </div>
+                <br>
+
+                <button type="submit" mat-raised-button
+                style="    border-radius: 10px;
+                background-color: #198875;
+                color: white;
+                margin-top: 5%; left: 47%" (click)="connect()" *ngIf=!showchat>
+                    Click to start chat
+                </button>
+            <!-- </form> -->
+        
+    </div>
+
+    <!-- <button type="submit" mat-raised-button
+                style="    border-radius: 10px;
+                background-color: #3b7e6d;
+                margin-left: 30px;" (click)="connect()">
+                    submit
+                </button> -->
+
+
+
+    <div id="chatPage" *ngIf=showchat>
+        <form  [formGroup]="chat" >  
+            <div id="chat-container" style="background-color: #198875; border-radius: 20px;padding-top: 10px ;max-width: 1000px;top:0; bottom: 0;left: 0;right: 0;margin: auto;">
+                <div id="chat-header" >     
+                    <h2 style="text-align: center;">Appointment ID: 135724</h2>
+                </div>
+
+                <ul id="messageArea" style="max-block-size: 500px;">
+                </ul>
+                <br>
+
+                <div id="messageinput">
+                    <mat-form-field floatLabel="auto" appearance="outline" [style.width.px]=550 style="margin-left: 150px;" >
+                        <mat-label style="color: white; font-weight:bold; letter-spacing:1px;">Enter Message:</mat-label>
+                        <input matInput formControlName="message" placeholder="Enter message to chat ....">
+                        <mat-icon matSuffix style="color: white;">message</mat-icon>
+                    </mat-form-field>
+                    <button class="button" (click)="sendMessage()" mat-mini-fab style="background-color: #3c4043;margin-top: 4px;margin-left:50px;">
+                        <mat-icon [inline]="true">send</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

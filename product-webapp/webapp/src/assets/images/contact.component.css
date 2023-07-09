@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Open+Sans:wght@300&family=Pacifico&display=swap');
+
+h1 {
+    font-family: 'Montserrat';
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 50px;
+}
+
+p {
+    font-family: 'Montserrat';
+    font-size: 20px;
+    margin-top: 50px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.grid-tile{
+    padding: 0 15px;
+    text-align: center;
+ }

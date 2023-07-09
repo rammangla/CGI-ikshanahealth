@@ -1,0 +1,129 @@
+<mat-tab-group>
+    <mat-tab label="India">
+        <div class="container" fxLayout="wrap row" fxLayout.xs="column" fxLayoutGap="5%" fxLayoutAlign="center">
+            <div *ngFor="let post of newsIndiaArticles" fxFlex="28%">
+                <mat-card class="singleNews">
+                    <img mat-card-image src="{{post.urlToImage}}" onError="this.src='../../../assets/images/no-image.jpg'"/>
+                    <div class="cardbody">
+                        <mat-card-title>{{post.title}}</mat-card-title>
+                        <!-- <mat-card-content>
+                            <p>{{post.description}}</p>
+                        </mat-card-content> -->
+                    </div>
+                    <mat-card-actions align="end">
+                        <a href="{{post.url}}" target="_blank" mat-raised-button>Read more</a>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="United States">
+        <div class="container" fxLayout="wrap row" fxLayout.xs="column" fxLayoutGap="5%" fxLayoutAlign="center">
+            <div *ngFor="let post of newsUsArticles" fxFlex="28%">
+                <mat-card class="singleNews">
+                    <img mat-card-image src="{{post.urlToImage}}" onError="this.src='../../../assets/images/no-image.jpg'"/>
+                    <div class="cardbody">
+                        <mat-card-title>{{post.title}}</mat-card-title>
+                        <!-- <mat-card-content>
+                            <p>{{post.description}}</p>
+                        </mat-card-content> -->
+                    </div>
+                    <mat-card-actions align="end">
+                        <a href="{{post.url}}" target="_blank" mat-raised-button>Read more</a>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="United Kingdom">
+        <div class="container" fxLayout="wrap row" fxLayout.xs="column" fxLayoutGap="5%" fxLayoutAlign="center">
+            <div *ngFor="let post of newsUkArticles" fxFlex="28%">
+                <mat-card class="singleNews">
+                    <img mat-card-image src="{{post.urlToImage}}" onError="this.src='../../../assets/images/no-image.jpg'"/>
+                    <div class="cardbody">
+                        <mat-card-title>{{post.title}}</mat-card-title>
+                        <!-- <mat-card-content>
+                            <p>{{post.description}}</p>
+                        </mat-card-content> -->
+                    </div>
+                    <mat-card-actions align="end">
+                        <a href="{{post.url}}" target="_blank" mat-raised-button>Read more</a>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Australia">
+        <div class="container" fxLayout="wrap row" fxLayout.xs="column" fxLayoutGap="5%" fxLayoutAlign="center">
+            <div *ngFor="let post of newsAustraliaArticles" fxFlex="28%">
+                <mat-card class="singleNews">
+                    <img mat-card-image src="{{post.urlToImage}}" onError="this.src='../../../assets/images/no-image.jpg'"/>
+                    <div class="cardbody">
+                        <mat-card-title>{{post.title}}</mat-card-title>
+                        <!-- <mat-card-content>
+                            <p>{{post.description}}</p>
+                        </mat-card-content> -->
+                    </div>
+                    <mat-card-actions align="end">
+                        <a href="{{post.url}}" target="_blank" mat-raised-button>Read more</a>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Canada">
+        <div class="container" fxLayout="wrap row" fxLayout.xs="column" fxLayoutGap="5%" fxLayoutAlign="center">
+            <div *ngFor="let post of newsCanadaArticles" fxFlex="28%">
+                <mat-card class="singleNews">
+                    <img mat-card-image src="{{post.urlToImage}}" onError="this.src='../../../assets/images/no-image.jpg'"/>
+                    <div class="cardbody">
+                        <mat-card-title>{{post.title}}</mat-card-title>
+                        <!-- <mat-card-content>
+                            <p>{{post.description}}</p>
+                        </mat-card-content> -->
+                    </div>
+                    <mat-card-actions align="end">
+                        <a href="{{post.url}}" target="_blank" mat-raised-button>Read more</a>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Singapore">
+        <div class="container" fxLayout="wrap row" fxLayout.xs="column" fxLayoutGap="5%" fxLayoutAlign="center">
+            <div *ngFor="let post of newsSingaporeArticles" fxFlex="28%">
+                <mat-card class="singleNews">
+                    <img mat-card-image src="{{post.urlToImage}}" onError="this.src='../../../assets/images/no-image.jpg'"/>
+                    <div class="cardbody">
+                        <mat-card-title>{{post.title}}</mat-card-title>
+                        <!-- <mat-card-content>
+                            <p>{{post.description}}</p>
+                        </mat-card-content> -->
+                    </div>
+                    <mat-card-actions align="end">
+                        <a href="{{post.url}}" target="_blank" mat-raised-button>Read more</a>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Malaysia">
+        <div class="container" fxLayout="wrap row" fxLayout.xs="column" fxLayoutGap="5%" fxLayoutAlign="center">
+            <div *ngFor="let post of newsMalaysiaArticles" fxFlex="28%">
+                <mat-card class="singleNews">
+                    <img mat-card-image src="{{post.urlToImage}}" onError="this.src='../../../assets/images/no-image.jpg'"/>
+                    <div class="cardbody">
+                        <mat-card-title>{{post.title}}</mat-card-title>
+                        <!-- <mat-card-content>
+                            <p>{{post.description}}</p>
+                        </mat-card-content> -->
+                    </div>
+                    <mat-card-actions align="end">
+                        <a href="{{post.url}}" target="_blank" mat-raised-button>Read more</a>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </mat-tab>
+    
+</mat-tab-group>

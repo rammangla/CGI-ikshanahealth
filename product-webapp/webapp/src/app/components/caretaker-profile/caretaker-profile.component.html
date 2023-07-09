@@ -1,0 +1,165 @@
+<mat-dialog-content>
+  <div class="modal-body row" [formGroup]="editForm">
+    <div class="col-md-8 border-right">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Name</mat-label>
+              <input formControlName="name" [ngModel]="data.name" matInput placeholder=" Name*">
+              <mat-error *ngIf="data.name.length==0 && editForm.dirty">This
+                field is mandatory.</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field hideRequiredMarker>
+              <mat-label>EmailId</mat-label>
+              <input formControlName="emailId" [ngModel]="data.emailId" matInput placeholder="EmailId">
+              <mat-error
+                *ngIf="editForm.get('emailId').invalid && (editForm.get('emailId').dirty || editForm.get('emailId').touched)">
+                Invalid email address.</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field>
+              <!-- <mat-label>Date of Birth</mat-label>   -->
+              <input formControlName="dob" [ngModel]="data.dob" matInput [matDatepicker]="myDatePicker" placeholder="Date of Birth">
+              <mat-datepicker-toggle matSuffix [for]="myDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #myDatePicker startView="year"></mat-datepicker>
+              <mat-error
+                *ngIf="editForm.get('dob').invalid && (editForm.get('dob').dirty || editForm.get('dob').touched)">This
+                field is mandatory.</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Phone number</mat-label>
+              <input formControlName="phoneNumber" [ngModel]="data.phoneNumber" matInput placeholder="Phone Number*">
+              <mat-error *ngIf="editForm.controls['phoneNumber'].errors?.required">This field is mandatory.</mat-error>
+              <mat-error *ngIf="editForm.controls['phoneNumber'].errors?.minlength">Minimum 8 charactors needed.
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Password</mat-label>
+              <input formControlName="password" [ngModel]="data.password" matInput placeholder="Password">
+              <!-- <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon> -->
+              <mat-hint text-align="end" *ngIf="editForm.get('password').value.length==0">Must contain atleast one caps,
+                digit
+                and
+                specialcharacter</mat-hint>
+              <mat-error
+                *ngIf="editForm.controls['password'].errors?.required && (editForm.get('password').dirty || editForm.get('password').touched)">
+                This field is mandatory.</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <mat-form-field>
+              <mat-label>ID Card</mat-label>
+              <input formControlName="idCard" matInput  [ngModel]="data.idCard" placeholder="ID Card*">
+              <mat-error
+                *ngIf="editForm.get('idCard').invalid && (editForm.get('idCard').dirty || editForm.get('idCard').touched)">
+                This field is mandatory.</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="w-100"></div>
+          <div class="col">
+          </div>
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Plot No.</mat-label>
+              <input formControlName="plotNo" [ngModel]="data.address.plotNo" matInput placeholder="Plot No.">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Street</mat-label>
+              <input matInput formControlName="street" [ngModel]="data.address.street" placeholder="Street">
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field>
+              <mat-label>City/Town</mat-label>
+              <input matInput formControlName="town" [ngModel]="data.address.town" placeholder="town">
+            </mat-form-field>
+          </div>
+          <div class="w-100"></div>
+          <div class="col">
+            <mat-form-field>
+              <mat-label>District</mat-label>
+              <input matInput formControlName="district" [ngModel]="data.address.district" placeholder="District">
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field>
+              <mat-label>State</mat-label>
+              <input matInput formControlName="state"[ngModel]="data.address.state" placeholder="State">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Pincode</mat-label>
+              <input matInput formControlName="pincode" [ngModel]="data.address.pincode" placeholder="Pincode">
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-radio-group formControlName="gender" [ngModel]="data.gender">
+              <div class="row">
+                <div class="col">
+                  <mat-radio-button value="male">Male</mat-radio-button>
+                </div>
+                <div class="col">
+                  <mat-radio-button value="female">Female</mat-radio-button>
+                </div>
+              </div>
+            </mat-radio-group>
+          </div>
+          <div class="w-100"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Total Experience</mat-label>
+              <input formControlName="totalExperience" matInput [ngModel]="data.totalExperience" placeholder="Total Experience">
+              <mat-error
+                *ngIf="data.totalExperience.invalid ">
+                This field is mandatory.</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Fees</mat-label>
+              <input formControlName="fees" [ngModel]="data.fees" matInput placeholder="Fees">
+              <mat-error
+                *ngIf="editForm.get('fees').invalid && (editForm.get('fees').dirty || editForm.get('fees').touched)">
+                This
+                field is mandatory.</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button id ="caretaker" type="submit" mat-dialog-closed (click)="onSubmit()">Update</button>
+  <button mat-raised-button id ="caretaker" type="submit" mat-dialog-closed (click)="cancelDialog()">Cancel</button>
+</mat-dialog-actions>

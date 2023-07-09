@@ -1,0 +1,81 @@
+.padding {
+    padding: 3rem !important
+}
+h6 {
+    font-size: 14px
+}
+p{
+    color: black;
+}
+.img-radius {
+    border-radius: 5px;
+    width:50%
+}
+body {
+    background-color: #f9f9fa
+}
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    border: none;
+    margin-bottom: 30px;
+    
+}
+
+.card-body1 {
+    padding: 1.25rem;
+    width: 100%;
+    height: 500px;    
+}
+
+.col-md-8   {
+    display: inline-block
+}
+.text-muted {
+    color: black !important
+}
+.card-title {
+    color:white;
+    font-size: 30px;
+    font-family: Montserrat, "Helvetica Neue", sans-serif; 
+    text-align: center;
+    margin-top: 20px;
+
+
+}
+.card-category{
+    font-size: 20px;
+}
+
+#doctor {
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: #3c4043;
+    color:whitesmoke;
+    margin-bottom: 10px;
+}
+
+.doctor-profile-card-full {
+    /* background: linear-gradient(#198875,white); */
+    background-color:   #36af9b;
+    padding-right: 0px;
+    margin-right: 0em;
+
+}
+.card-body{
+    /* background: linear-gradient(#198875,white); */
+    font-family: Montserrat, "Helvetica Neue", sans-serif; 
+}
+.card-header-danger{
+    background-color:   #36af9b;
+    /* background: linear-gradient(#198875,white); */
+    font-family: Montserrat, "Helvetica Neue", sans-serif; 
+
+}
+.m-b-10{
+    font-weight: bold;
+}
+h3{
+    font-weight: bold;
+}

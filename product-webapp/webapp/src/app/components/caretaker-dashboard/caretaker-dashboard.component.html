@@ -1,0 +1,71 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+        <ng-container *ngIf="caretaker.gender  == 'female', then femaleimg; else maleimg">
+
+        </ng-container>
+        <ng-template #maleimg>
+          <img src="../../../assets/images/male1.png" class="img-radius">
+        </ng-template>
+        <ng-template #femaleimg>
+          <img src="../../../assets/images/female1.png" class="img-radius">
+        </ng-template>
+        <h3 style="text-align: center;">Welcome, {{caretaker.name}}</h3>
+        <button mat-raised-button class="profile" routerLink="/caretakerdata">My Profile</button>
+        <div class="centric">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Total Earning</mat-card-title>
+                    <mat-card-subtitle>(in Rs.)</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <h2 style="text-align: center; color: black;">
+                    {{Earning()}}
+                    </h2>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="centric">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>No. of hires</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <h2 style="text-align: center; color: black;">
+                        {{Hirer()}}
+                    </h2>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-10">
+                    <table class="table">
+                        <thead style="background-color: #198875;">
+                            <tr>
+                                <th>Hirer Name</th>
+                                <th>Appointment Date</th>
+                                <!-- <th>Hirer Dob</th> -->
+                                <th >Gender</th>
+                                <th>Appointment Id</th>
+                            </tr>
+                        </thead>
+                        <tbody style="background-color: white;" *ngFor="let recents of recent">
+                            <tr>
+                                <td>{{Event(recents.userEmailId).name}}</td>
+                                <td>{{recents.date}}</td>
+                                <!-- <td>{{Event(recents.userEmailId).dob}}</td> -->
+                                <td>{{Event(recents.userEmailId).gender}}</td>
+                                <td>{{recents.appointmentId}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <button mat-raised-button id ="caretaker" type="submit" mat-dialog-closed [routerLink]="['/caretaker-slot']">Add Slots</button>
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
